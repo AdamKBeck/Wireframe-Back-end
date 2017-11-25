@@ -1,6 +1,5 @@
 // Provides location information of an element on the canvas. Final, as no class should extend this
-final case class Location private(private var _x: Int = Location.DEFAULT_X_LOCATION,
-	private var _y: Int = Location.DEFAULT_Y_LOCATION) {
+final case class Location private(private var _x: Int, private var _y: Int) {
 
 	// Public getters
 	def x: Int = _x
@@ -8,19 +7,19 @@ final case class Location private(private var _x: Int = Location.DEFAULT_X_LOCAT
 
 	// Public setters
 	def x_=(coordinate: Int): Unit = {
-		x = coordinate
+		_x = coordinate
 	}
 	def y_=(coordinate: Int): Unit = {
-		y = coordinate
+		_y = coordinate
 	}
 }
 
 object Location {
-	// final static fields
-	final val DEFAULT_X_LOCATION = 0
-	final val DEFAULT_Y_LOCATION = 0
+	// public final static fields
+	final val DEFAULT_X_LOCATION: Int = 0
+	final val DEFAULT_Y_LOCATION: Int = 0
 
 	// Singleton pattern
-	private val _instance = Location()
+	private val _instance = Location(DEFAULT_X_LOCATION, DEFAULT_Y_LOCATION)
 	def instance: Location = _instance
 }
