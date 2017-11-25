@@ -11,26 +11,26 @@ final case class LinearProperty private(private var _width: Int,
 	def layerPriority: Byte = _layerPriority
 
 	// Public setters
-	private def width_=(value: Int): Unit = {
+	def width_=(value: Int): Unit = {
 		_width = value
 	}
-	private def height_=(value: Int): Unit = {
+	def height_=(value: Int): Unit = {
 		_height = value
 	}
-	private def location_=(loc: Location): Unit = {
+	def location_=(loc: Location): Unit = {
 		_location = loc
 	}
-	private def layerPriority_=(priority: Byte): Unit = {
-		layerPriority = priority
+	def layerPriority_=(priority: Byte): Unit = {
+		_layerPriority = priority
 	}
 
-	// Private functions
-	private def bringToTop(): Unit = {
-		layerPriority = LinearProperty.TOP
+	// Public functions
+	def bringToTop(): Unit = {
+		_layerPriority = LinearProperty.TOP
 	}
 
-	private def bringToBottom(): Unit = {
-		layerPriority = LinearProperty.BOTTOM
+	def bringToBottom(): Unit = {
+		_layerPriority = LinearProperty.BOTTOM
 	}
 }
 
