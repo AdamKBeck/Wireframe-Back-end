@@ -20,7 +20,11 @@ final case class Group private(private val _elements: ListBuffer[Element] = List
 	def add(group: Group): Unit = _elements ++= group.elements
 	def remove(group: Group): Unit = group.elements.map(_elements -= _)
 
-	// add/remove annotations to this group as a whole
-	def annotate(annotation: Annotation): Unit = _annotations += Annotation(message)
+	/* add/remove annotations to this group as a whole.
+	 * Since there could be more than 1 element in a group, an annotaion object is passed,
+	 * instead of just the message, because we don't know which element the annotation should
+	 * get its linear property from, if any
+	 */
+	def annotate(annotation: Annotation): Unit = _annotations += annotation
 	def deannotate(annotation: Annotation): Unit = _annotations -= annotation
 }

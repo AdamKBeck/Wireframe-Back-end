@@ -16,8 +16,10 @@ final case class LinearProperty private(private var _width: Int,
 	def layerPriority_=(priority: Byte): Unit = _layerPriority = priority
 
 	// Public functions
+	// Brings an element to the top of all other elements
 	def bringToTop(): Unit = _layerPriority = LinearProperty.TOP
 
+	// Brings an element to teh bottom of all other elements
 	def bringToBottom(): Unit = _layerPriority = LinearProperty.BOTTOM
 
 	//TODO: methods to follow law of demeter (set a new location)

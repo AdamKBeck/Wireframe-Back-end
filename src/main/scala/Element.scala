@@ -16,10 +16,11 @@ case class Element(private val _linearProperty: LinearProperty = LinearProperty.
 	// Public setters
 	def locked_=(value: Boolean): Unit = _locked = value
 
-	//TODO: methods to follow law of demeter (set a new location?)
-}
-
-object Element {
-	def main(args: Array[String]): Unit = {
+	// Public functions
+	// Adds an annotation to this element. the annotation's linear property is the element's
+	def annotate(message: String): Unit = {
+		_annotations += Annotation(_linearProperty = linearProperty, _message = message)
 	}
+
+	//TODO: methods to follow law of demeter (set a new location?)
 }
