@@ -1,30 +1,29 @@
-case class Element(private val _linearProperty: LinearProperty) {
+case class Element(private val _linearProperty: LinearProperty = LinearProperty.instance,
+	private var _locked: Boolean = false,
+	private val _group: Group = Group.instance,
+	private val _annotations: List[Annotation] = Nil) {
 
-	def linearProperty = _linearProperty
+	// Public getters
+	def linearProperty: LinearProperty = _linearProperty
+	def locked: Boolean = _locked
+	def group: Group = _group
+	def annotations: List[Annotation] = _annotations
 
+	// Public setters
+	def locked_=(value: Boolean): Unit = _locked = value
+
+	//TODO: methods to follow law of demeter
 }
 
 object Element {
 	def main(args: Array[String]): Unit = {
-		val obj = Element(LinearProperty.instance)
+		val obj = Element()
 		println("Initial values")
-		printf("Width: %d\n", obj.linearProperty.width)
-		printf("Height: %d\n", obj.linearProperty.height)
-		printf("Layer Priority: %d\n", obj.linearProperty.layerPriority)
+		println(obj.linearProperty.location.y)
+		obj.linearProperty.location.y = 33
+		println(obj.linearProperty.location.y)
 
-		println("\n Altered values")
-		obj.linearProperty.width = 99
-		obj.linearProperty.height = 99
-		obj.linearProperty.layerPriority = 23
+		println(obj.linearProperty.width)
 
-		printf("Width: %d\n", obj.linearProperty.width)
-		printf("Height: %d\n", obj.linearProperty.height)
-		printf("Layer Priority: %d\n", obj.linearProperty.layerPriority)
-
-		obj.linearProperty.bringToBottom()
-		printf("Layer Priority: %d\n", obj.linearProperty.layerPriority)
-
-		obj.linearProperty.bringToTop()
-		printf("Layer Priority: %d\n", obj.linearProperty.layerPriority)
 	}
 }

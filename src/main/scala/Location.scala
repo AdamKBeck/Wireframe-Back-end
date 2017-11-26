@@ -6,12 +6,8 @@ final case class Location private(private var _x: Int, private var _y: Int) {
 	def y: Int = _y
 
 	// Public setters
-	def x_=(coordinate: Int): Unit = {
-		_x = coordinate
-	}
-	def y_=(coordinate: Int): Unit = {
-		_y = coordinate
-	}
+	def x_=(coordinate: Int): Unit = _x = coordinate
+	def y_=(coordinate: Int): Unit = _y = coordinate
 }
 
 object Location {
