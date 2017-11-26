@@ -6,11 +6,17 @@
 import scala.collection.mutable.ListBuffer
 
 final case class Group private(private val _elements: ListBuffer[Element] = ListBuffer(),
-	private val _annotations: ListBuffer[Annotation] = ListBuffer()) {
+	private val _annotations: ListBuffer[Annotation] = ListBuffer(),
+	private var _locked: Boolean = false)
+	extends Lockable{
 
 	// Public getters
 	def elements: List[Element] = _elements.toList // Defensive copy
 	def annotations: List[Annotation] = _annotations.toList // Defensive copy
+	def locked: Boolean = _locked
+
+	// Public setters
+	def locked_=(value: Boolean): Unit = _locked = value
 
 	// Public functions
 	// Add/remove elements to the group
@@ -24,7 +30,7 @@ final case class Group private(private val _elements: ListBuffer[Element] = List
 	/* add/remove annotations to this group as a whole.
 	 * Since there could be more than 1 element in a group, an annotaion object is passed,
 	 * instead of just the message, because we don't know which element the annotation should
-	 * get its linear property from, if any
+	 * get its linear property from.
 	 */
 	def annotate(annotation: Annotation): Unit = _annotations += annotation
 	def deannotate(annotation: Annotation): Unit = _annotations -= annotation

@@ -38,6 +38,4 @@ object LinearProperty {
 		DEFAULT_HEIGHT,
 		Location(Location.DEFAULT_X_LOCATION, Location.DEFAULT_Y_LOCATION),
 		TOP)
-
-
 }

@@ -6,7 +6,8 @@ import scala.collection.mutable.ListBuffer
 
 case class Element(private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
-	private val _annotations: ListBuffer[Annotation] = ListBuffer()) {
+	private val _annotations: ListBuffer[Annotation] = ListBuffer())
+	extends Lockable{
 
 	// Public getters
 	def linearProperty: LinearProperty = _linearProperty
@@ -22,5 +23,9 @@ case class Element(private var _linearProperty: LinearProperty = LinearProperty.
 		_annotations += Annotation(_linearProperty = linearProperty, _message = message)
 	}
 
-	//TODO: methods to follow law of demeter (set a new location?)
+	// Removes an annotation by a specific index for an element
+	def deannotate(index: Int): Unit = _annotations.remove(index)
+
+
+	//TODO: methods to follow law of demeter (set a new location, get positions, etc?)
 }
