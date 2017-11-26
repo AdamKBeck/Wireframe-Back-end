@@ -1,7 +1,7 @@
 // Provides width, height, and location data to an element. Final, as no class should extend this
 final case class LinearProperty private(private var _width: Int,
 	private var _height: Int,
-	private var _location: Location,
+	private val _location: Location,
 	private var _layerPriority: Byte) {
 
 	// Public getters
@@ -13,7 +13,6 @@ final case class LinearProperty private(private var _width: Int,
 	// Public setters
 	def width_=(value: Int): Unit = _width = value
 	def height_=(value: Int): Unit = _height = value
-	def location_=(loc: Location): Unit = _location = loc
 	def layerPriority_=(priority: Byte): Unit = _layerPriority = priority
 
 	// Public functions
@@ -21,6 +20,7 @@ final case class LinearProperty private(private var _width: Int,
 
 	def bringToBottom(): Unit = _layerPriority = LinearProperty.BOTTOM
 
+	//TODO: methods to follow law of demeter (set a new location)
 }
 
 object LinearProperty {
