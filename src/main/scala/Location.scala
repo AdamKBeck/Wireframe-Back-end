@@ -14,8 +14,4 @@ object Location {
 	// public final static fields
 	final val DEFAULT_X_LOCATION: Int = 0
 	final val DEFAULT_Y_LOCATION: Int = 0
-
-	// Singleton pattern
-	private val _instance = Location(DEFAULT_X_LOCATION, DEFAULT_Y_LOCATION)
-	def instance: Location = _instance
 }

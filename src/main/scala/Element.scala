@@ -4,7 +4,7 @@
 
 import scala.collection.mutable.ListBuffer
 
-case class Element(private val _linearProperty: LinearProperty = LinearProperty.instance,
+case class Element(private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer()) {
 

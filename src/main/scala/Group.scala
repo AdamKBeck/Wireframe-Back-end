@@ -1,5 +1,6 @@
 /* Provides information and functionalities for an element's group. Groups can be annotated
  * Note: An element is always in a group with itself
+ * Final, as no class should extend this.
  */
 
 import scala.collection.mutable.ListBuffer

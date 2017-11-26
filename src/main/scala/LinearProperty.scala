@@ -1,4 +1,6 @@
-// Provides width, height, and location data to an element. Final, as no class should extend this
+/* Provides width, height, and location data to an element. Final, as no class should extend this
+ * Singleton, as we only want one
+ */
 final case class LinearProperty private(private var _width: Int,
 	private var _height: Int,
 	private val _location: Location,
@@ -32,8 +34,10 @@ object LinearProperty {
 	final val DEFAULT_WIDTH: Int = 0
 	final val DEFAULT_HEIGHT: Int = 0
 
-	// Singleton pattern
-	private val _instance = LinearProperty(DEFAULT_WIDTH, DEFAULT_HEIGHT,
-		Location.instance, TOP)
-	def instance: LinearProperty = _instance
+	final val DEFAULT_LINEAR_PROPERTY: LinearProperty = LinearProperty(DEFAULT_WIDTH,
+		DEFAULT_HEIGHT,
+		Location(Location.DEFAULT_X_LOCATION, Location.DEFAULT_Y_LOCATION),
+		TOP)
+
+
 }
