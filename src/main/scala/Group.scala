@@ -5,7 +5,7 @@
 
 import scala.collection.mutable.ListBuffer
 
-final case class Group private(private val _elements: ListBuffer[Element] = ListBuffer(),
+final case class Group (private val _elements: ListBuffer[Element] = ListBuffer(),
 	private val _annotations: ListBuffer[Annotation] = ListBuffer(),
 	private var _locked: Boolean = false)
 	extends Lockable{
@@ -34,4 +34,16 @@ final case class Group private(private val _elements: ListBuffer[Element] = List
 	 */
 	def annotate(annotation: Annotation): Unit = _annotations += annotation
 	def deannotate(annotation: Annotation): Unit = _annotations -= annotation
+
+	// Functions to follow law of demeter: Annotation getters
+	def annotationVisibility(index: Int): Boolean = _annotations(index).visibility
+	def annotationLinearProperty(index: Int): LinearProperty = _annotations(index).linearProperty
+	def annotationMessage(index: Int): String = _annotations(index).message
+
+	/* Functions to follow law of demeter: Annotation setters
+	 * Since we have more than 1 paramater, instead of using a tuple, we name
+	 * this function as a java-style setter
+	 */
+	def setAnnotationVisibility(index: Int, value: Boolean): Unit = _annotations(index).visibility = value
+	def setAnnotationMessage(index: Int, newMessage: String): Unit = _annotations(index).message = newMessage
 }

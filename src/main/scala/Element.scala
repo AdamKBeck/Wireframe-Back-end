@@ -9,6 +9,9 @@ case class Element(private var _linearProperty: LinearProperty = LinearProperty.
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Lockable{
 
+	// TODO: make Element a private constructor since we don't want an element, we want
+	// TODO: the subclasses which are elements
+
 	// Public getters
 	def linearProperty: LinearProperty = _linearProperty
 	def locked: Boolean = _locked
@@ -26,6 +29,36 @@ case class Element(private var _linearProperty: LinearProperty = LinearProperty.
 	// Removes an annotation by a specific index for an element
 	def deannotate(index: Int): Unit = _annotations.remove(index)
 
+	// Functions to follow law of demeter: LinearProperty getters
+	def width: Int = _linearProperty.width
+	def height: Int = _linearProperty.height
+	def location: Location = _linearProperty.location
+	def layerPriority: Byte = _linearProperty.layerPriority
 
-	//TODO: methods to follow law of demeter (set a new location, get positions, etc?)
+	// Functions to follow law of demeter: LinearProperty setters
+	def width_=(value: Int): Unit = _linearProperty.width = value
+	def height_=(value: Int): Unit = _linearProperty.height = value
+	def layerPriority_=(priority: Byte): Unit = _linearProperty.layerPriority = priority
+	def bringToTop(): Unit = _linearProperty.bringToTop()
+	def bringToBottom(): Unit = _linearProperty.bringToBottom()
+
+	// Functions to follow law of demeter: Location getters
+	def x: Int = _linearProperty.x
+	def y: Int = _linearProperty.y
+
+	// Functions to follow law of demeter: Location setters
+	def x_=(coordinate: Int): Unit = _linearProperty.x = coordinate
+	def y_=(coordinate: Int): Unit = _linearProperty.y = coordinate
+
+	// Functions to follow law of demeter: Annotation getters
+	def annotationVisibility(index: Int): Boolean = _annotations(index).visibility
+	def annotationLinearProperty(index: Int): LinearProperty = _annotations(index).linearProperty
+	def annotationMessage(index: Int): String = _annotations(index).message
+
+	/* Functions to follow law of demeter: Annotation setters
+	 * Since we have more than 1 paramater, instead of using a tuple, we name
+	 * this function as a java-style setter
+	 */
+	def setAnnotationVisibility(index: Int, value: Boolean): Unit = _annotations(index).visibility = value
+	def setAnnotationMessage(index: Int, newMessage: String): Unit = _annotations(index).message = newMessage
 }

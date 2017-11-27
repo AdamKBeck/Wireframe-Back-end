@@ -1,5 +1,5 @@
 // Provides location information of an element on the canvas. Final, as no class should extend this
-final case class Location private(private var _x: Int, private var _y: Int) {
+final case class Location (private var _x: Int, private var _y: Int) {
 
 	// Public getters
 	def x: Int = _x

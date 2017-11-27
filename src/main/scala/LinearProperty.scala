@@ -24,7 +24,13 @@ final case class LinearProperty private(private var _width: Int,
 	// Brings an element to teh bottom of all other elements
 	def bringToBottom(): Unit = _layerPriority = LinearProperty.BOTTOM
 
-	//TODO: methods to follow law of demeter (set a new location)
+	// Functions to follow law of demeter: Location getters
+	def x: Int = _location.x
+	def y: Int = _location.y
+
+	// Functions to follow law of demeter: Location setters
+	def x_=(coordinate: Int): Unit = _location.x = coordinate
+	def y_=(coordinate: Int): Unit = _location.y = coordinate
 }
 
 object LinearProperty {

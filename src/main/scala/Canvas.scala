@@ -42,4 +42,34 @@ object Canvas {
 
 	// Singleton implementation
 	private val _instance = Canvas(DEFAULT_WIDTH, DEFAULT_HEIGHT)
+	def instance: Canvas = _instance
+
+	def main(args: Array[String]): Unit = {
+		val element = Element()
+		element.width = 10
+		element.height = 20
+		element.x = 30
+		element.y = 40
+		element.bringToBottom()
+		element.locked = true
+
+		element.annotate("this")
+		element.y = 30
+		element.x = 333
+
+		element.setAnnotationVisibility(0, true)
+		element.setAnnotationMessage(0, "new Message")
+
+		val canvas = Canvas.instance
+		canvas.add(element)
+
+		println(canvas.elements)
+
+		val group = Group()
+		group.add(element)
+		group.annotate(Annotation(_linearProperty = element.linearProperty, _message = "asdf"))
+		canvas.add(group)
+
+		println(canvas.groups)
+	}
 }
