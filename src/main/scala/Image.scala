@@ -5,13 +5,13 @@ import scala.collection.mutable.ListBuffer
 /*  Note the protected constructor similar to the Element class
  * 	Final, as no class should extend this
  */
-final class RoundedBox protected (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
+final class Image protected (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Box(_linearProperty, _locked, _annotations) {
 }
 
-object RoundedBox {
+object Image {
 	/* This "breaks abstraction badly", but how would a GUI know what it's drawing?
 	 * If I am creating a slider, the only way to know what to add to my GUI is to check this field.
 	 * Otherwise, all I know is that this is a subclass of an element, its shape and linear properties,
@@ -21,5 +21,5 @@ object RoundedBox {
 	 * step to draw them on my GUI is to check this field, so I know what to draw (e.g. a JTextBox if
 	 * this field says "Box" or a JSlider if this field says "slider"
 	 */
-	private final val TYPE: String = "RoundedBox"
+	private final val TYPE: String = "Image"
 }
