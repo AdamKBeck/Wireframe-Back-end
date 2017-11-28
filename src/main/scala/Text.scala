@@ -1,4 +1,4 @@
-/* Provides information and functionalities for Text */
+// Provides information and functionalities for Text
 
 package wireframe
 
