@@ -53,5 +53,69 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		assert(result.isEmpty)
 	}
 
-	
+	// Good data: min normal config
+	behavior of "groupWith"
+	it should "test nominally, min normal config" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val elementA = new ProgressBar()
+		val elementB = new Slider()
+		val elementC = new Slider()
+
+		val group = Group()
+		group.add(elementA)
+		group.add(elementB)
+		group.add(elementC)
+
+		canvas.add(group)
+
+		val groupWith = PrivateMethod[List[Group]]('groupWith)
+		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		assert(result.size == 1)
+	}
+
+	// Bad data: no groups contain the element
+	it should "test bad data, no groups contain the element" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val elementA = new ProgressBar()
+		val elementB = new Slider()
+		val elementC = new Slider()
+
+		val group = Group()
+		group.add(elementA)
+		group.add(elementB)
+		group.add(elementC)
+
+
+		val groupWith = PrivateMethod[List[Group]]('groupWith)
+		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		assert(result.isEmpty)
+	}
+
+
+	// Bad data: normal/max config: element is in multiple groups
+	it should "test bad data, multiple groups contain the element" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val elementA = new ProgressBar()
+		val elementB = new Slider()
+		val elementC = new Slider()
+
+		val group = Group()
+		group.add(elementA)
+		group.add(elementB)
+		group.add(elementC)
+
+		canvas.add(group)
+		canvas.add(group)
+
+		val groupWith = PrivateMethod[List[Group]]('groupWith)
+		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		assert(result.size == 2)
+	}
+
 }
