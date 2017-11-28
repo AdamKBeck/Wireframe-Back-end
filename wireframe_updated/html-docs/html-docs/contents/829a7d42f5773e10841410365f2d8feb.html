@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>List</title>
+        <title>TextList</title>
         <!-- <script src="http://use.edgefonts.net/source-sans-pro;source-code-pro.js"></script> -->
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -20,7 +20,7 @@
 
             <!-- Name Title -->
 
-            <h1>List</h1>
+            <h1>TextList</h1>
 
             <!-- Type and Stereotype -->
 
@@ -45,7 +45,7 @@
                     <span class="label label-info"><a href='594af663de577680f35b13183109d675.html'><span class='node-icon _icon-UMLModel'></span>Model</a></span>
                 
                     <span>::</span>
-                    <span class="label label-info"><a href='829a7d42f5773e10841410365f2d8feb.html'><span class='node-icon _icon-UMLClass'></span>List</a></span>
+                    <span class="label label-info"><a href='829a7d42f5773e10841410365f2d8feb.html'><span class='node-icon _icon-UMLClass'></span>TextList</a></span>
                 
             </section>
 
@@ -154,16 +154,44 @@
                     
                     <tr>
                         <td>private</td>
-                        <td><a href="2005de6db83dbaa65ab435a770560607.html">_bullets</a></td>
-                        <td>List&lt;Paragraph&gt;</td>
+                        <td><a href="2005de6db83dbaa65ab435a770560607.html">_linearProperty</a></td>
+                        <td><a href='a9b4151c96efb4051a4aadf58437e4f3.html'>LinearProperty</a></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>private</td>
-                        <td><a href="44a370e1bf01553621086adff32db7fc.html">_type</a></td>
-                        <td><span class='label label-info'>none</span></td>
-                        <td><p>Calls the private setter textType to set the type to CANNED.</p></td>
+                        <td><a href="88cc09d091040791513ed837389ad53e.html">_locked</a></td>
+                        <td>Boolean</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>private</td>
+                        <td><a href="60cbe6e46eaf51783d8664aaad590413.html">_annotations</a></td>
+                        <td>listBuffer&lt;Annotation&gt;</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>private</td>
+                        <td><a href="9036e1b99c64a0f48e9ec47be915fc18.html">_textType</a></td>
+                        <td>String</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>private</td>
+                        <td><a href="cdbfccfbf62a4920e6e5c67a97bd9422.html">_alignment</a></td>
+                        <td>String</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>private</td>
+                        <td><a href="c5ad1daa970445e0bab65cd977cc1d28.html">_paragraphs</a></td>
+                        <td>ListBuffer&lt;Paragraph&gt;</td>
+                        <td></td>
                     </tr>
                     
                 </table>
@@ -184,19 +212,25 @@
                     
                     <tr>
                         <td>public</td>
-                        <td><a href="5235f56b1b67c13556d32afb7dc9e3d1.html">bullets(): List&lt;Paragraph&gt;</a></td>
+                        <td><a href="b42f3eb68647b15524447fbfb289066b.html">paragraphs(): List&lt;Paragraph&gt;</a></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>public</td>
-                        <td><a href="a640b0047b3aff31a5a207cca2497f9b.html">add(paragraph: Paragraph): Boolean</a></td>
+                        <td><a href="f17290010b6cae538d99d9c7e16cd0f9.html">add(paragraph: paragraph)</a></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>public</td>
-                        <td><a href="99f7e7ae751d3ab1e5597913d2d74a32.html">remove(index: Int): Boolean</a></td>
+                        <td><a href="bf308d2c0069712dba4868fd852c45c2.html">remove(index: int)</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="8e4cea9773653e3f1f832fa735041bd8.html">TYPE(): String</a></td>
                         <td></td>
                     </tr>
                     
@@ -280,7 +314,7 @@
     
     <tr>
         <td>name</td>
-        <td>List</td>
+        <td>TextList</td>
     </tr>
     
     
@@ -387,7 +421,7 @@
     <h3>Relationships</h3>
     <ul class="nav nav-list">
         
-        <li><a href='4ba8247123cbdd62bd72eeed2bcf2dfe.html'><span class='node-icon _icon-UMLGeneralization'></span>is a (List→Text)</a></li>
+        <li><a href='4ba8247123cbdd62bd72eeed2bcf2dfe.html'><span class='node-icon _icon-UMLGeneralization'></span>is a (TextList→Text)</a></li>
         
     </ul>
 </section>
@@ -402,7 +436,7 @@
     <h3>Owned Elements</h3>
     <ul class="nav nav-list">
         
-        <li><a href='4ba8247123cbdd62bd72eeed2bcf2dfe.html'><span class='node-icon _icon-UMLGeneralization'></span>is a (List→Text)</a></li>
+        <li><a href='4ba8247123cbdd62bd72eeed2bcf2dfe.html'><span class='node-icon _icon-UMLGeneralization'></span>is a (TextList→Text)</a></li>
         
     </ul>
 </section>

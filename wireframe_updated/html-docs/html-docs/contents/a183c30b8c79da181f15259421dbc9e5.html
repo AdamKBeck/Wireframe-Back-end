@@ -164,14 +164,21 @@
                     <tr>
                         <td>private</td>
                         <td><a href="28f5c0913277efb7fcc3805c8aa04f93.html">_elements</a></td>
-                        <td>List&lt;Elements&gt;</td>
+                        <td>ListBuffer&lt;Elements&gt;</td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>private</td>
                         <td><a href="44c319b7961e23e0876f9c9b11a46639.html">_annotation</a></td>
-                        <td>List&lt;Annotation&gt;</td>
+                        <td>ListBuffer&lt;Annotation&gt;</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>private</td>
+                        <td><a href="f3296c99ebcee9496bf2957a7d2af0d9.html">_locked</a></td>
+                        <td>Boolean</td>
                         <td></td>
                     </tr>
                     
@@ -217,13 +224,37 @@
                     
                     <tr>
                         <td>public</td>
-                        <td><a href="2a308283598701eec1e8032f47755c19.html">annotation(): List&lt;Annotation&gt;</a></td>
+                        <td><a href="2a308283598701eec1e8032f47755c19.html">annotations(): List&lt;Annotation&gt;</a></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>public</td>
                         <td><a href="96e037f9c3ac55c2dc593270bcd2d582.html">remove(element: Element): Boolean</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="01d1adca86d9e31a4a3a44e6f10a6a62.html">locked(): Boolean</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="1384d207614f08f613fff6f53d57a2ee.html">setLocked(value: Boolean)</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="b09eacdb6cb2951018bae5bd7465e4ba.html">deannotate(annotation: Annotation): Unit</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="67719d66c4306e3f6d6aad404a567fb3.html">annotationLawOfDemeter()</a></td>
                         <td></td>
                     </tr>
                     
@@ -416,6 +447,8 @@
         
         <li><a href='288327038b2e29bd74b40735182dd2f7.html'><span class='node-icon _icon-UMLGeneralization'></span>contains many (Group→Annotation)</a></li>
         
+        <li><a href='aea152dfff8c963a3564260eb251f07c.html'><span class='node-icon _icon-UMLAssociation'></span>(Group—Lockable)</a></li>
+        
         <li><a href='ed004e6673ebaab06a216e9a38a80f77.html'><span class='node-icon _icon-UMLGeneralization'></span>contains a (Element→Group)</a></li>
         
         <li><a href='8045e46fde1d97cae7db08b2526bd543.html'><span class='node-icon _icon-UMLAssociation'></span>has (Element—Group)</a></li>
@@ -438,6 +471,8 @@
     <ul class="nav nav-list">
         
         <li><a href='288327038b2e29bd74b40735182dd2f7.html'><span class='node-icon _icon-UMLGeneralization'></span>contains many (Group→Annotation)</a></li>
+        
+        <li><a href='aea152dfff8c963a3564260eb251f07c.html'><span class='node-icon _icon-UMLAssociation'></span>(Group—Lockable)</a></li>
         
     </ul>
 </section>
