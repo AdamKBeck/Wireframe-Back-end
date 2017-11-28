@@ -12,9 +12,6 @@ class Element protected (private var _linearProperty: LinearProperty = LinearPro
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Lockable{
 
-	// TODO: make Element a private constructor since we don't want an element, we want
-	// TODO: the subclasses which are elements
-
 	// Public getters
 	def linearProperty: LinearProperty = _linearProperty
 	def locked: Boolean = _locked
@@ -60,8 +57,7 @@ class Element protected (private var _linearProperty: LinearProperty = LinearPro
 
 	/* Functions to follow law of demeter: Annotation setters
 	 * Since we have more than 1 paramater, instead of using a tuple, we name
-	 * this function as a java-style setter
-	 */
+	 * this function as a java-style setter */
 	def setAnnotationVisibility(index: Int, value: Boolean): Unit = _annotations(index).visibility = value
 	def setAnnotationMessage(index: Int, newMessage: String): Unit = _annotations(index).message = newMessage
 }
