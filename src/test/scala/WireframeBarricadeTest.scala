@@ -1112,4 +1112,62 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		}
 
 	}
+
+
+	// Edge cases
+	behavior of "edge cases for valid dimensions"
+	it should "return true" in {
+		val element = new ScrollBar()
+		element.locked = false
+
+		val canvas = Canvas.instance
+
+		canvas.add(element)
+
+		val barricade = WireframeBarricade.instance
+
+		assert(barricade.setWidth(element, 10))
+	}
+
+	it should "find another group containing this element" in {
+
+		val element = new ScrollBar()
+		element.locked = false
+
+		val canvas = Canvas.instance
+
+		canvas.add(element)
+		val group = Group()
+		group.add(element)
+
+		val group2 = Group()
+		group2.add(element)
+		canvas.add(group)
+		canvas.add(group2)
+
+		val barricade = WireframeBarricade.instance
+		assert(barricade.setLocation(10, 10, element))
+	}
+
+
+	it should "catch an element trying to move when locked" in {
+
+		val element = new ScrollBar()
+		element.locked = false
+
+		val canvas = Canvas.instance
+
+		canvas.add(element)
+		val group = Group()
+		group.add(element)
+		element.locked = true
+
+		val group2 = Group()
+		group2.add(element)
+		canvas.add(group)
+		canvas.add(group2)
+
+		val barricade = WireframeBarricade.instance
+		assert(!barricade.setLocation(10, 10, element))
+	}
 }

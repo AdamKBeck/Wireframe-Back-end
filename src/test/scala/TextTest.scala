@@ -14,6 +14,7 @@ class TextTest extends FlatSpec {
 	// Bad data: not in the text cache
 	it should "Bad data, test with something not in the text cache" in {
 		val textList = new TextList(_textType = "stuff")
+		textList.alignment = "anything"
 		assert(textList.text == None)
 	}
 

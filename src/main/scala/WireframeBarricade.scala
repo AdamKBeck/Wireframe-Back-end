@@ -137,7 +137,7 @@ final case class WireframeBarricade private() {
 
 		// Otherwise, make sure the element is not locked and neither is the group
 		else {
-			if (isUnlocked(element) && groupWithElement.head.elements.forall(e => isUnlocked(e)) && !group.locked) {
+			if (isUnlocked(element)) {
 				group.add(element)
 				true
 			}
@@ -208,7 +208,7 @@ final case class WireframeBarricade private() {
 		val unlockedGroupWithElement = groupWithElement.filter(group => !group.locked)
 
 		// Therefore, we are left with a group that contains our element and the group is unlocked
-		if (unlockedGroupWithElement.nonEmpty) {
+		if (unlockedGroupWithElement.nonEmpty || groupWith(element).size == 0) {
 			true
 		}
 		else {
@@ -219,7 +219,7 @@ final case class WireframeBarricade private() {
 
 	// Checks if a proposed width is in the canvas and doesn't overlap anything
 	private def isValidWidth(element: Element, width: Int): Boolean = {
-		if (isWidthInCanvas(element, width) && isWidthOverlapping(element, width)) {
+		if (isWidthInCanvas(element, width) && !isWidthOverlapping(element, width)) {
 			true
 		}
 		else {
@@ -262,7 +262,7 @@ final case class WireframeBarricade private() {
 
 	// Checks if a proposed height is in the canvas and doesn't overlap anything
 	private def isValidHeight(element: Element, height: Int): Boolean = {
-		if (isHeightInCanvas(element, height) && isHeightOverlapping(element, height)) {
+		if (isHeightInCanvas(element, height) && !isHeightOverlapping(element, height)) {
 			true
 		}
 		else {
@@ -319,4 +319,5 @@ object WireframeBarricade {
 	// Singleton implementation
 	private val _instance = WireframeBarricade()
 	def instance: WireframeBarricade = _instance
+
 }
