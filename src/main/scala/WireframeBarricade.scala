@@ -222,7 +222,7 @@ final case class WireframeBarricade private() {
 
 	// Checks if a proposed height is within the canvas
 	private def isHeightInCanvas(element: Element, height: Int): Boolean = {
-		(element.x + height) <= Canvas.instance.height
+		(element.y + height) <= Canvas.instance.height
 	}
 
 	// Checks if a proposed height on an element ends up overlapping the other elements
@@ -235,7 +235,6 @@ final case class WireframeBarricade private() {
 		// Filter all the elements that aren't below (vertically down) from our element
 		otherElements = otherElements.filterNot(e => e.y > element.y +height)
 
-		// If any elements remain in this list, they overlap with our proposed element change
 		otherElements.nonEmpty
 	}
 
