@@ -751,4 +751,233 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 		assert(!result)
 	}
+
+	// Good data: element is unlocked
+	// Structured basis: if statement true
+	behavior of "setLayerPriority"
+	it should "test nominally" in {
+		clear()
+		val element = new Slider()
+
+
+		val p: Byte = 3
+		val setLayerPriority = PrivateMethod[Boolean]('setLayerPriority)
+		val result = WireframeBarricade.instance.invokePrivate(setLayerPriority(p, element))
+
+		assert(result)
+	}
+
+	// Bad data: element is locked
+	// Strucutred basis, if satement is false
+	it should "if statement is false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+
+		val p: Byte = 3
+		val setLayerPriority = PrivateMethod[Boolean]('setLayerPriority)
+		val result = WireframeBarricade.instance.invokePrivate(setLayerPriority(p, element))
+
+		assert(result)
+	}
+
+	// Good data: element is unlocked
+	// Structured basis: if statement true
+	behavior of "bringToBottom"
+	it should "test nominally" in {
+		clear()
+		val element = new Slider()
+
+		val bringToBottom = PrivateMethod[Boolean]('bringToBottom)
+		val result = WireframeBarricade.instance.invokePrivate(bringToBottom(element))
+
+		assert(result)
+	}
+
+	// Bad data: element is locked
+	// Strucutred basis: if statement is false
+	it should "if statement is false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+		val bringToBottom = PrivateMethod[Boolean]('bringToBottom)
+		val result = WireframeBarricade.instance.invokePrivate(bringToBottom(element))
+
+		assert(!result)
+	}
+
+	// Good data: element is unlocked
+	// Structured basis: if statement true
+	behavior of "bringToTop"
+	it should "test nominally" in {
+		clear()
+		val element = new Slider()
+
+		val bringToTop = PrivateMethod[Boolean]('bringToTop)
+		val result = WireframeBarricade.instance.invokePrivate(bringToTop(element))
+
+		assert(result)
+	}
+
+	// Bad data: element is locked
+	// Strucutred basis: if statement is false
+	behavior of "bringToTop"
+	it should "if statement is false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+		val bringToTop = PrivateMethod[Boolean]('bringToTop)
+		val result = WireframeBarricade.instance.invokePrivate(bringToTop(element))
+
+		assert(!result)
+	}
+
+
+	// Good data: moving to a good location
+	// Structured basis: all if statements true
+	behavior of "setLocation"
+	it should "test nominally" in {
+		clear()
+		val element = new Slider()
+
+		val setLocation = PrivateMethod[Boolean]('setLocation)
+		val result = WireframeBarricade.instance.invokePrivate(setLocation(10, 10, element))
+
+		assert(result)
+	}
+
+	// Structured basis: first if statement false
+	it should "first if statement false" in {
+		clear()
+		val element = new Slider()
+		element.x = 10
+		element.y = 10
+		val element2 = new ProgressBar()
+		element2.x = 200
+		element2.y = 200
+
+		val group = Group()
+		group.add(element)
+		group.add(element2)
+
+		val setLocation = PrivateMethod[Boolean]('setLocation)
+		val result = WireframeBarricade.instance.invokePrivate(setLocation(11, 10, element))
+
+		assert(result)
+	}
+
+	// Bad data: element is locked
+	// Strucutued basis: first if true, inner if false
+	it should "first if statement true, inner false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+		val setLocation = PrivateMethod[Boolean]('setLocation)
+		val result = WireframeBarricade.instance.invokePrivate(setLocation(10, 10, element))
+
+		assert(!result)
+	}
+
+	// Bad data: elements in group is locked
+	// Structured basis: first if false, inner if false
+	it should "first if statement false, inner false" in {
+		clear()
+		val element = new Slider()
+		element.x = 10
+		element.y = 10
+		val element2 = new ProgressBar()
+		element2.x = 200
+		element2.y = 200
+
+		val group = Group()
+		group.add(element)
+		group.add(element2)
+		group.locked = true
+		element.locked = true
+
+		val setLocation = PrivateMethod[Boolean]('setLocation)
+		val result = WireframeBarricade.instance.invokePrivate(setLocation(11, 10, element))
+
+		assert(!result)
+	}
+
+	// Strucutred basis, all conditions true
+	// Good data: height is valid
+	behavior of "setHeight"
+	it should "test nominally, all conditions true" in {
+		clear()
+		val element = new Slider()
+
+		val setHeight = PrivateMethod[Boolean]('setHeight)
+		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10))
+
+		assert(result)
+	}
+
+	// Strucutred basis: if statement is false (first boolean condition false)
+	// Bad data: element is locked
+	it should "bad data, element is locked. first if false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+		val setHeight = PrivateMethod[Boolean]('setHeight)
+		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10))
+
+		assert(!result)
+	}
+
+	// Strucutred basis, second boolean condition false
+	// Bad data: height too big
+	it should "bad data, height too big" in {
+		clear()
+		val element = new Slider()
+
+		val setHeight = PrivateMethod[Boolean]('setHeight)
+		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10000))
+
+		assert(!result)
+	}
+
+	// Strucutred basis, all conditions true
+	// Good data: width is valid
+	behavior of "setWidth"
+	it should "test nominally, all conditions true" in {
+		clear()
+		val element = new Slider()
+
+		val setWidth = PrivateMethod[Boolean]('setWidth)
+		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10))
+
+		assert(result)
+	}
+
+	// Strucutred basis: if statement is false (first boolean condition false)
+	// Bad data: element is locked
+	it should "bad data, element is locked. first if false" in {
+		clear()
+		val element = new Slider()
+		element.locked = true
+
+		val setWidth = PrivateMethod[Boolean]('setWidth)
+		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10))
+
+		assert(!result)
+	}
+
+	// Strucutred basis, second boolean condition false
+	// Bad data: width too big
+	it should "bad data, width too big" in {
+		clear()
+		val element = new Slider()
+
+		val setWidth = PrivateMethod[Boolean]('setWidth)
+		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10000))
+
+		assert(!result)
+	}
 }

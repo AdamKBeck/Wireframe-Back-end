@@ -68,7 +68,6 @@ final case class WireframeBarricade private() {
 			val yOffset = newY - element.y
 
 			// Move the elements in the group too
-			//TODO: change to for loop? Does a map actually change these things?
 			elementsInGroup.map(element => element.x + xOffset)
 			elementsInGroup.map(element => element.y + yOffset)
 
