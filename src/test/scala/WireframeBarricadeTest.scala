@@ -2,6 +2,7 @@ package wireframe
 
 import org.scalatest.FlatSpec
 import org.scalatest.PrivateMethodTester
+import sun.util.resources.cldr.ha.CalendarData_ha_Latn_NE
 
 class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
@@ -418,4 +419,336 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		assert(!result)
 	}
 
+	// Good data: an unlocked group contains an element
+	behavior of "isUnlockedGroupContaining"
+	it should "test nominally, min normal config" in {
+		clear()
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val element2 = new Slider(_value = 4)
+		val group = Group()
+		group.add(element)
+		group.add(element2)
+
+		canvas.add(group)
+
+		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+
+		assert(result)
+	}
+
+	// GOod data: normal and max config.
+	it should "test nominally, normal and max config" in {
+		clear()
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val element2 = new Slider(_value = 4)
+		val group = Group()
+		group.add(element)
+		group.add(element)
+		group.add(element)
+		group.add(element)
+		group.add(element)
+		group.add(element)
+		group.add(element2)
+
+		canvas.add(group)
+
+		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+
+		assert(result)
+	}
+
+	// Bad data: a group is locked containing the element
+	it should "test bad data: a group is locked containing the element" in {
+		clear()
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val element2 = new Slider(_value = 4)
+		val group = Group()
+		group.add(element)
+		group.add(element2)
+
+		canvas.add(group)
+		group.locked = true
+
+
+		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+
+		assert(!result)
+	}
+
+	// Structured basis: all boolean conditions true
+	behavior of "isUnlocked"
+	it should "test nominally, all boolean conditions true" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+
+		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+
+		assert(result)
+	}
+
+	// Structrued basis: first boolean condition false
+	it should "test structured basis, first boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = true
+
+		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+
+		assert(!result)
+	}
+
+	// Structrued basis: second boolean condition false
+	it should "test structured basis, second boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = true
+		val group = Group()
+		group.add(element)
+		group.locked = true
+
+		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
+		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+
+		assert(!result)
+	}
+
+	// Structured basis, all boolean conditions true
+	behavior of "isMoveValid"
+	it should "test nominally, all boolean conditions true" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.x = 3
+		element.y = 3
+		element.width = 3
+		element.height = 3
+
+		val isMoveValid = PrivateMethod[Boolean]('isMoveValid)
+		val result = WireframeBarricade.instance.invokePrivate(isMoveValid(element))
+
+		assert(result)
+	}
+
+	// Structured basis, first boolean condition false
+	it should "first boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.x = 3
+		element.y = 3
+		element.width = 3
+		element.height = 3
+		element.locked = true
+
+		val isMoveValid = PrivateMethod[Boolean]('isMoveValid)
+		val result = WireframeBarricade.instance.invokePrivate(isMoveValid(element))
+
+		assert(!result)
+	}
+
+	// Structured basis, second boolean condition false
+	it should "second boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.x = 3
+		element.y = 3
+		element.width = 30000
+		element.height = 3
+
+		val isMoveValid = PrivateMethod[Boolean]('isMoveValid)
+		val result = WireframeBarricade.instance.invokePrivate(isMoveValid(element))
+
+		assert(!result)
+	}
+
+	// Structured basis, third boolean condition false
+	it should "third boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.x = 3
+		element.y = 3
+		element.width = 3
+		element.height = 300000
+
+		val isMoveValid = PrivateMethod[Boolean]('isMoveValid)
+		val result = WireframeBarricade.instance.invokePrivate(isMoveValid(element))
+
+		assert(!result)
+	}
+
+	// Structured basis, all boolean conditions true
+	behavior of "annotate"
+	it should "test nominally, all boolean conditons true" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val group = Group()
+		group.add(element)
+
+		val annotate= PrivateMethod[Boolean]('annotate)
+		val annotation = Annotation(_linearProperty = element.linearProperty)
+		val result = WireframeBarricade.instance.invokePrivate(annotate(group, annotation))
+
+		assert(result)
+	}
+
+	// Bad data: locked group
+	// Structured basis, first boolean condition false
+	it should "first boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val group = Group()
+		group.locked = true
+		group.add(element)
+
+		val annotate= PrivateMethod[Boolean]('annotate)
+		val annotation = Annotation(_linearProperty = element.linearProperty)
+		val result = WireframeBarricade.instance.invokePrivate(annotate(group, annotation))
+
+		assert(!result)
+	}
+
+	// Structured basis, second boolean condition false
+	it should "second boolean condition false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = true
+		val group = Group()
+		group.add(element)
+
+		val annotate= PrivateMethod[Boolean]('annotate)
+		val annotation = Annotation(_linearProperty = element.linearProperty)
+		val result = WireframeBarricade.instance.invokePrivate(annotate(group, annotation))
+
+		assert(!result)
+	}
+
+
+	// Strucuted basis, if statement true
+	behavior of "annotate"
+	it should "test nominally" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+
+		val annotate= PrivateMethod[Boolean]('annotate)
+		val result = WireframeBarricade.instance.invokePrivate(annotate(element,"test"))
+
+		assert(result)
+	}
+
+	// Bad data: locked element
+	// Strucutred basis, if statement false
+	it should "if statement false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = true
+
+		val annotate= PrivateMethod[Boolean]('annotate)
+		val result = WireframeBarricade.instance.invokePrivate(annotate(element,"test"))
+
+		assert(!result)
+	}
+
+
+	// Structured basis, all boolean conditions true
+	behavior of "group"
+	it should "test nominally" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val group1 = Group()
+		group1.add(element)
+
+		val group2 = Group()
+		group2.add(element)
+
+		canvas.add(group1)
+		canvas.add(group2)
+
+		val group = PrivateMethod[Boolean]('group)
+		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+
+		assert(!result)
+	}
+
+	// Strucutred basis, first boolean condition false
+	it should "fist if statment false" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		val group1 = Group()
+		canvas.add(group1)
+
+		val group = PrivateMethod[Boolean]('group)
+		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+
+		assert(result)
+	}
+
+	// Second if statement false, first boolean condition
+	// Bad data: locked element
+	it should "second if false, first boolean condition" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = true
+		val group1 = Group()
+		canvas.add(group1)
+
+		val group = PrivateMethod[Boolean]('group)
+		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+
+		assert(!result)
+	}
+
+	// Second if statement false, second boolean condition
+	// Bad data: locked element element in gruop
+	it should "second if false, second boolean condition" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element2 = new Slider()
+		element2.locked = true
+		val element = new Slider(_value = 3)
+		val group1 = Group()
+		group1.add(element2)
+		canvas.add(group1)
+
+		val group = PrivateMethod[Boolean]('group)
+		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+
+		assert(!result)
+	}
 }
