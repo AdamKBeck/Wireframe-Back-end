@@ -16,7 +16,6 @@ final case class WireframeBarricade private() {
 object WireframeBarricade {
 
 	// TODO: log stuff when false
-	// TODO: move group along with element
 
 	// Attempts to change an element's width
 	def setWidth(element: Element, width: Int): Boolean = {
