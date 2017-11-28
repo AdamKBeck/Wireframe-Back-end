@@ -10,11 +10,6 @@
 package wireframe
 
 final case class WireframeBarricade private() {
-
-}
-
-object WireframeBarricade {
-
 	// TODO: log stuff when false
 
 	// Attempts to change an element's width
@@ -254,6 +249,9 @@ object WireframeBarricade {
 		Canvas.instance.elements.filterNot(_ == element)
 	}
 
+}
+
+object WireframeBarricade {
 	// Singleton implementation
 	private val _instance = WireframeBarricade()
 	def instance: WireframeBarricade = _instance

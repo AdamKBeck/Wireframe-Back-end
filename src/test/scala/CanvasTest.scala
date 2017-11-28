@@ -90,5 +90,14 @@ class CanvasTest extends FlatSpec {
 	}
 
 
+	behavior of "clear"
+	it should "clear out everything in the canvas" in {
+		Canvas.instance.add(new RoundedBox())
+		Canvas.instance.clear
+
+		assert(Canvas.instance.elements.isEmpty)
+		assert(Canvas.instance.groups.isEmpty)
+		assert(Canvas.instance.annotations.isEmpty)
+	}
 
 }

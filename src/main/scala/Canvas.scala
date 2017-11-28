@@ -37,6 +37,15 @@ final case class Canvas private(private val _width: Int,
 	// Adds/removes annotations to the canvas
 	def add(annotation: Annotation): Unit = _annotations += annotation
 	def remove(annotation: Annotation): Unit = _annotations -= annotation
+
+	// For user-friendly useage
+	def clear = {
+		_elements.clear()
+		_groups.clear()
+		_annotations.clear()
+	}
+
+
 }
 
 object Canvas {
