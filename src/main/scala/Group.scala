@@ -23,10 +23,6 @@ final case class Group (private val _elements: ListBuffer[Element] = ListBuffer(
 	def add(element: Element): Unit = _elements += element
 	def remove(element: Element): Unit = _elements -= element
 
-	// Add/remove elements from groups to the group (subgrouping)
-	def add(group: Group): Unit = _elements ++= group.elements
-	def remove(group: Group): Unit = group.elements.map(_elements -= _)
-
 	/* add/remove annotations to this group as a whole.
 	 * Since there could be more than 1 element in a group, an annotaion object is passed,
 	 * instead of just the message, because we don't know which element the annotation should

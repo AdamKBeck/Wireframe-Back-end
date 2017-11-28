@@ -108,7 +108,7 @@ object WireframeBarricade {
 		}
 	}
 
-	// Attemps to set the layer priority of an element
+	// Attempts to set the layer priority of an element
 	def setLayerPriority(priority: Byte, element: Element): Boolean = {
 		if (isUnlocked(element)) {
 			element.layerPriority = priority
@@ -116,6 +116,28 @@ object WireframeBarricade {
 		}
 		else {
 			false
+		}
+	}
+
+	// Attempts to add an element to a group. Can't happen if it's in another group, or the group is locked
+	def group(element: Element, group: Group): Boolean = {
+		val groupWithElement = groupWith(element)
+
+		// If another group has the element already
+		if (groupWithElement.nonEmpty) {
+			false
+		}
+
+		// Otherwise, make sure the element is not locked and neither is the group
+		else {
+			if (isUnlocked(element) && groupWithElement.head.elements.forall(e => isUnlocked(e)) && !group.locked) {
+				group.add(element)
+				true
+			}
+
+			else {
+				false
+			}
 		}
 	}
 
