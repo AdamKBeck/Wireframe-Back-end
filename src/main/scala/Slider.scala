@@ -5,7 +5,7 @@ package wireframe
 import scala.collection.mutable.ListBuffer
 
 // Note the protected constructor similar to the Element class
-class Slider (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
+final class Slider (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer(),
 	private var _value: Int = Bar.MINIMUM_VALUE)

@@ -1,3 +1,4 @@
+// Provides information and functionalities for RoundedBoxes
 package wireframe
 
 import scala.collection.mutable.ListBuffer
