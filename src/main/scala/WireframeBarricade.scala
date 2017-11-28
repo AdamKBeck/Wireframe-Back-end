@@ -84,12 +84,45 @@ object WireframeBarricade {
 		}
 	}
 
-	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)
-	def isMoveValid(element: Element): Boolean = {
-		isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)
+	// Attempts to bring an element to the top
+	def bringToTop(element: Element): Boolean = {
+		if (isUnlocked(element)) {
+			element.layerPriority = LinearProperty.TOP
+			true
+		}
+
+		else {
+			false
+		}
 	}
 
+	// Attempts to bring an element to the bottom
+	def bringToBottom(element: Element): Boolean = {
+		if (isUnlocked(element)) {
+			element.layerPriority = LinearProperty.BOTTOM
+			true
+		}
 
+		else {
+			false
+		}
+	}
+
+	// Attemps to set the layer priority of an element
+	def setLayerPriority(priority: Byte, element: Element): Boolean = {
+		if (isUnlocked(element)) {
+			element.layerPriority = priority
+			true
+		}
+		else {
+			false
+		}
+	}
+
+	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)
+	private def isMoveValid(element: Element): Boolean = {
+		isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)
+	}
 
 	// Returns based on if an element is unlocked and the group its in is unlocked
 	private def isUnlocked(element: Element): Boolean = {
