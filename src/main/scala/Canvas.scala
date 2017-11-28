@@ -41,8 +41,8 @@ final case class Canvas private(private val _width: Int,
 
 object Canvas {
 	// Private static fields
-	private final val DEFAULT_WIDTH: Int = 800
-	private final val DEFAULT_HEIGHT: Int = 800
+	final val DEFAULT_WIDTH: Int = 800
+	final val DEFAULT_HEIGHT: Int = 800
 
 	// Singleton implementation
 	private val _instance = Canvas(DEFAULT_WIDTH, DEFAULT_HEIGHT)
