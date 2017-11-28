@@ -13,12 +13,6 @@ case class Logger private() {
 		pw.write(message + "\n")
 		pw.close()
 	}
-
-	def delete(fileName: String): Unit = {
-		for (name <- fileName) {
-			Files.deleteIfExists(Paths.get("src/" + name))
-		}
-	}
 }
 
 object Logger {
