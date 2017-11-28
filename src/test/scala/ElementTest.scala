@@ -1,9 +1,8 @@
 package wireframe
 
 import org.scalatest.FlatSpec
-import org.scalatest.PrivateMethodTester
 
-class ElementTest extends FlatSpec with PrivateMethodTester{
+class ElementTest extends FlatSpec{
 	// Good data: Min normal config
 	behavior of "annotate"
 	it should "Test min config nominally" in {
@@ -85,7 +84,5 @@ class ElementTest extends FlatSpec with PrivateMethodTester{
 		assert(slider.annotationMessage(0) == "new text")
 		assert(slider.annotationLinearProperty(0).x == 0)
 		assert(slider.annotationVisibility(0) == true)
-
-
 	}
 }
