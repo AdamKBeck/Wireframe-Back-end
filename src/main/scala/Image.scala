@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 /*  Note the protected constructor similar to the Element class
  * 	Final, as no class should extend this
  */
-final class Image protected (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
+final class Image (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Box(_linearProperty, _locked, _annotations) {
@@ -21,5 +21,5 @@ object Image {
 	 * step to draw them on my GUI is to check this field, so I know what to draw (e.g. a JTextBox if
 	 * this field says "Box" or a JSlider if this field says "slider"
 	 */
-	private final val TYPE: String = "Image"
+	final val TYPE: String = "Image"
 }
