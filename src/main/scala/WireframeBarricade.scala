@@ -6,6 +6,9 @@
  * Singleton, as we only want one access to this class.
  * Final, as nothing should extend this
  */
+
+package wireframe
+
 final case class WireframeBarricade private() {
 
 }
@@ -21,7 +24,9 @@ object WireframeBarricade {
 			element.width = width
 			true
 		}
-		false
+		else {
+			false
+		}
 	}
 
 	// Attempts to change an element's height
@@ -30,7 +35,10 @@ object WireframeBarricade {
 			element.height = height
 			true
 		}
-		false
+		else {
+			false
+		}
+
 	}
 
 	// Attempts to change an element's position. This also changes the group too
@@ -147,8 +155,9 @@ object WireframeBarricade {
 			element.annotate(text)
 			true
 		}
-
-		false
+		else {
+			false
+		}
 	}
 
 	// Attempts to add an annotation to a group. Can't happen if the group is locked or group elements are too.
@@ -158,7 +167,9 @@ object WireframeBarricade {
 			true
 		}
 
-		false
+		else {
+			false
+		}
 	}
 
 	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)

@@ -1,4 +1,6 @@
 // Provides location information of an element on the canvas. Final, as no class should extend this
+package wireframe
+
 final case class Location (private var _x: Int, private var _y: Int) {
 
 	// Public getters

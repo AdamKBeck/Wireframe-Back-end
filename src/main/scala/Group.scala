@@ -3,6 +3,8 @@
  * Final, as no class should extend this.
  */
 
+package wireframe
+
 import scala.collection.mutable.ListBuffer
 
 final case class Group (private val _elements: ListBuffer[Element] = ListBuffer(),

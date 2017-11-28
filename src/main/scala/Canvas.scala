@@ -6,6 +6,8 @@
  * Final, as nothing should extend this.
  */
 
+package wireframe
+
 import scala.collection.mutable.ListBuffer
 
 final case class Canvas private(private val _width: Int,

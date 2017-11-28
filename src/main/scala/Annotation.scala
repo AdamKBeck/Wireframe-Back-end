@@ -2,6 +2,8 @@
  * A single elements or an entire group itself can have an annotation for it.
  * Final, as no class should extend this.
  */
+package wireframe
+
 final case class Annotation(private var _visibility: Boolean = false, // "typically invisible"
 	private val _linearProperty: LinearProperty, // An element's linear property
 	private var _message: String = "") {

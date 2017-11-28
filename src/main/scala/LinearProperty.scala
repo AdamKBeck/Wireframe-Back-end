@@ -1,6 +1,9 @@
 /* Provides width, height, and location data to an element. Final, as no class should extend this
  * Singleton, as we only want one
  */
+
+package wireframe
+
 final case class LinearProperty private(private var _width: Int,
 	private var _height: Int,
 	private val _location: Location,
