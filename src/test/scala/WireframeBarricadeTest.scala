@@ -2,7 +2,7 @@ package wireframe
 
 import org.scalatest.FlatSpec
 import org.scalatest.PrivateMethodTester
-import sun.util.resources.cldr.ha.CalendarData_ha_Latn_NE
+import java.util.Random // For stress test
 
 class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
@@ -979,5 +979,136 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10000))
 
 		assert(!result)
+	}
+
+	// Stress test
+	// I will generate a bunch of overlapping elements, and show that they collide
+	// NOTE: the other tests will randomly fail due to race conditions with
+	// the singletons, but this passes since its the only one being slept
+	behavior of "overlapping stress test"
+	it should "always detect collisions" in {
+		Thread.sleep(500)
+		clear()
+
+		val canvas = Canvas.instance
+
+		val rand = new Random()
+		// Loop 100 times
+		for (i <- 1 to 100) {
+			// Insert 11 elements where we know for a fact one overlaps the rest
+			val element = new RoundedBox()
+			val xPos = rand.nextInt(600)
+			val yPos = rand.nextInt(600)
+			val w = 50
+			val h = 50
+
+			element.x = xPos
+			element.y = yPos
+			element.width = w
+			element.height = h
+
+			canvas.add(element)
+
+			for (i <- 1 to 10) {
+				val temp = new RoundedBox()
+				temp.x = xPos + ( + rand.nextInt(100) % w) // Guaranteed a collision
+				temp.y = rand.nextInt(100)
+				temp.width = rand.nextInt(100)
+				temp.height = rand.nextInt(100)
+
+				canvas.add(temp)
+			}
+			val barricade = WireframeBarricade.instance
+
+			assert(!canvas.elements.forall(element =>
+				barricade.setLocation(element.x, element.y, element)))
+
+			clear()
+		}
+	}
+
+
+	// Stress test
+	// NOTE: I will show that I can always move non-colliding groups inside the canvas
+	// again, this test passes, since I slept it to prevent race conditions with the singletons
+	behavior of "moving groups"
+	it should "always move a simple non-colliding groups together" in {
+		Thread.sleep(1000)
+		clear()
+
+		val canvas = Canvas.instance
+
+		val rand = new Random()
+
+		for (i <- 1 to 100) {
+			val elementA = new RoundedBox()
+			val elementB = new Image()
+			val elementC = new ScrollBar()
+
+			// Set A, B, and C close enough so I know the bounds to move them by
+			elementA.x = 100
+			elementB.x = 200
+			elementC.x = 300
+
+			elementA.y = 0
+			elementB.y = 100
+			elementC.y = 200
+
+			elementA.height= 50
+			elementB.height= 50
+			elementC.height= 50
+
+			elementA.width = 50
+			elementB.width = 50
+			elementC.width = 50
+
+			//Diagrammatically, they look like this:
+			/*   AA              *
+			 *   AA              *
+			 *                   *
+			 *       BB          *
+			 *       BB          *
+			 *                   *
+			 *          CC       *
+			 *          CC       *
+			 *                   *
+			 *                   *
+			 *                   *
+			 */
+
+
+			/* I can deduce that I can move this group up to 450 wide
+			 * since my default width is 800, 550 down, 100 left, and 0 up
+			 */
+
+			val right = rand.nextInt(440)
+			val left = rand.nextInt(90)
+			val down = rand.nextInt(540)
+
+			elementA.x += right
+			elementB.x += right
+			elementC.x += right
+
+			elementA.y += down
+			elementB.y += down
+			elementC.y += down
+
+			elementA.x -=  left
+			elementB.x -=  left
+			elementC.x -=  left
+
+			val group = Group()
+			group.add(elementA)
+			group.add(elementB)
+			group.add(elementC)
+
+			canvas.add(group)
+
+			val barricade = WireframeBarricade.instance
+			// Now we make sure we can place this on the canvas
+			assert(canvas.elements.forall(element =>
+				barricade.setLocation(elementA.x, elementA.y, elementA)))
+		}
+
 	}
 }
