@@ -5,17 +5,13 @@ package wireframe
 
 import scala.collection.mutable.ListBuffer
 
-class Box(private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
+// Note the protected constructor similar to the Element class
+class Box protected (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
-	private val _annotations: ListBuffer[Annotation] = ListBuffer()) extends Element {
-
+	private val _annotations: ListBuffer[Annotation] = ListBuffer())
+	extends Element(_linearProperty, _locked, _annotations) {
 }
 
 object Box {
-	def main(args: Array[String]): Unit = {
-		val a = new Box(_locked = true)
-		println(a.x)
-		println(a.locked)
 
-	}
 }
