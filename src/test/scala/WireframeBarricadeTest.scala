@@ -9,6 +9,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 	// Because Canvas is a singleton, we call this before every test
 	private def clear() = Canvas.instance.clear
 
+
 	// Good data: min normal config
 	behavior of "elements except"
 	it should "test nominally, min normal config" in {

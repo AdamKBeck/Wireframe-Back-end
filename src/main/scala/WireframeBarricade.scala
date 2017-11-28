@@ -10,7 +10,6 @@
 package wireframe
 
 final case class WireframeBarricade private() {
-	// TODO: log stuff when false
 
 	// Attempts to change an element's width
 	def setWidth(element: Element, width: Int): Boolean = {
@@ -19,6 +18,7 @@ final case class WireframeBarricade private() {
 			true
 		}
 		else {
+			Logger.instance.log(message = "width could not be set")
 			false
 		}
 	}
@@ -30,6 +30,7 @@ final case class WireframeBarricade private() {
 			true
 		}
 		else {
+			Logger.instance.log(message = "height could not be set")
 			false
 		}
 
@@ -55,6 +56,7 @@ final case class WireframeBarricade private() {
 			else {
 				element.x = oldX
 				element.y = oldY
+				Logger.instance.log(message = "The location of a single element cannot be moved")
 				false
 			}
 		}
@@ -79,7 +81,7 @@ final case class WireframeBarricade private() {
 			else {
 				elementsInGroup.map(element => element.x - xOffset)
 				elementsInGroup.map(element => element.y - yOffset)
-
+				Logger.instance.log(message = "The location of the elements in this element's group cannot be moved")
 				false
 			}
 		}
@@ -93,6 +95,7 @@ final case class WireframeBarricade private() {
 		}
 
 		else {
+			Logger.instance.log(message = "Element could not be brought to top")
 			false
 		}
 	}
@@ -105,6 +108,7 @@ final case class WireframeBarricade private() {
 		}
 
 		else {
+			Logger.instance.log(message = "Element could not be brought to bottom")
 			false
 		}
 	}
@@ -116,6 +120,7 @@ final case class WireframeBarricade private() {
 			true
 		}
 		else {
+			Logger.instance.log(message = "The layer priority could not be set for the element")
 			false
 		}
 	}
@@ -126,6 +131,7 @@ final case class WireframeBarricade private() {
 
 		// If another group has the element already
 		if (groupWithElement.nonEmpty) {
+			Logger.instance.log(message = "This element already has a group on the canvas")
 			false
 		}
 
@@ -137,6 +143,7 @@ final case class WireframeBarricade private() {
 			}
 
 			else {
+				Logger.instance.log(message = "This element cannot be grouped to this group")
 				false
 			}
 		}
@@ -149,6 +156,7 @@ final case class WireframeBarricade private() {
 			true
 		}
 		else {
+			Logger.instance.log(message = "This element cannot be annotated")
 			false
 		}
 	}
@@ -161,18 +169,31 @@ final case class WireframeBarricade private() {
 		}
 
 		else {
+			Logger.instance.log(message = "This group cannot be annotated")
 			false
 		}
 	}
 
 	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)
 	private def isMoveValid(element: Element): Boolean = {
-		isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)
+		if (isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element cannot be moved here")
+			false
+		}
 	}
 
 	// Returns based on if an element is unlocked and the group its in is unlocked
 	private def isUnlocked(element: Element): Boolean = {
-		!element.locked && isUnlockedGroupContaining(element)
+		if (!element.locked && isUnlockedGroupContaining(element)) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element or its group is not unlocked")
+			false
+		}
 	}
 
 	/* Returns based on if a group containing an element is unlocked.
@@ -187,17 +208,35 @@ final case class WireframeBarricade private() {
 		val unlockedGroupWithElement = groupWithElement.filter(group => !group.locked)
 
 		// Therefore, we are left with a group that contains our element and the group is unlocked
-		unlockedGroupWithElement.nonEmpty
+		if (unlockedGroupWithElement.nonEmpty) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "There is not an unlocked group containing this element")
+			false
+		}
 	}
 
 	// Checks if a proposed width is in the canvas and doesn't overlap anything
 	private def isValidWidth(element: Element, width: Int): Boolean = {
-		isWidthInCanvas(element, width) && isWidthOverlapping(element, width)
+		if (isWidthInCanvas(element, width) && isWidthOverlapping(element, width)) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element can't have this width, it's invalid")
+			false
+		}
 	}
 
 	// Checks if a proposed width is within the canvas
 	private def isWidthInCanvas(element: Element, width: Int): Boolean = {
-		(element.x + width) <= Canvas.instance.width
+		if ((element.x + width) <= Canvas.instance.width) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element's width doesn't fit in the canvas")
+			false
+		}
 	}
 
 	// Checks if a proposed width on an element ends up overlapping the other elements
@@ -211,17 +250,36 @@ final case class WireframeBarricade private() {
 		otherElements = otherElements.filterNot(e => e.x > element.x + width)
 
 		// If any elements remain in this list, they overlap with our proposed element change
-		otherElements.nonEmpty
+		if (otherElements.nonEmpty) {
+			true
+		}
+
+		else {
+			Logger.instance.log(message = "This element's width is overlapping")
+			false
+		}
 	}
 
 	// Checks if a proposed height is in the canvas and doesn't overlap anything
 	private def isValidHeight(element: Element, height: Int): Boolean = {
-		isHeightInCanvas(element, height) && isHeightOverlapping(element, height)
+		if (isHeightInCanvas(element, height) && isHeightOverlapping(element, height)) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element's height is invalid")
+			false
+		}
 	}
 
 	// Checks if a proposed height is within the canvas
 	private def isHeightInCanvas(element: Element, height: Int): Boolean = {
-		(element.y + height) <= Canvas.instance.height
+		if ((element.y + height) <= Canvas.instance.height) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element's height doesn't fit in the canvas")
+			false
+		}
 	}
 
 	// Checks if a proposed height on an element ends up overlapping the other elements
@@ -234,9 +292,17 @@ final case class WireframeBarricade private() {
 		// Filter all the elements that aren't below (vertically down) from our element
 		otherElements = otherElements.filterNot(e => e.y > element.y +height)
 
-		otherElements.nonEmpty
+		if (otherElements.nonEmpty) {
+			true
+		}
+		else {
+			Logger.instance.log(message = "This element's height overlaps other elements")
+			false
+		}
 	}
 
+	/* I am not adding the error logger to these, as these are helper functions for more specific functions above.
+	 * The real error comes from the specific reason above that the user needs to know about, not these ones down here */
 	// Helper function to return the group(s) that contains a specified element
 	private def groupWith(element: Element): List[Group] = {
 		Canvas.instance.groups.filter(group => group.elements.contains(element))
