@@ -3,6 +3,7 @@ package wireframe
 import org.scalatest.FlatSpec
 
 class CanvasTest extends FlatSpec {
+
 	// Good data: min normal config
 	behavior of "add"
 	it should "test nominally, min normal config" in {
@@ -35,6 +36,7 @@ class CanvasTest extends FlatSpec {
 		assert(canvas.elements.size >= 8)
 	}
 
+	// Good data: min normal config
 	behavior of "remove"
 	it should "test nominally, min normal config" in {
 		val canvas = Canvas.instance
@@ -56,6 +58,14 @@ class CanvasTest extends FlatSpec {
 		assert(canvas.groups.nonEmpty)
 		assert(canvas.annotations.nonEmpty)
 	}
+
+	// Bad data: removing an element or group that doesn't exist
+	it should "Test with bad data: Removing elements not on the canvas" in {
+		Canvas.instance.remove(new ProgressBar())
+		assert(Canvas.instance.elements.nonEmpty)
+	}
+
+	// Good data: normal/max config
 	it should "test nominally, normal/max config" in {
 		val canvas = Canvas.instance
 		canvas.add(new RoundedBox())
@@ -72,6 +82,7 @@ class CanvasTest extends FlatSpec {
 		canvas.remove(new RoundedBox())
 		assert(!canvas.elements.forall(e => e == new RoundedBox()))
 	}
+
 
 	behavior of "static fields"
 	it should "hold default dimensions" in {
