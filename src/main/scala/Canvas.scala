@@ -2,6 +2,8 @@
  * wireframe is being drawn into. Final, as no class should extend this.
  *
  * Singleton, as we only want one canvas.
+ *
+ * Final, as nothing should extend this.
  */
 
 import scala.collection.mutable.ListBuffer

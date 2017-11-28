@@ -1,0 +1,106 @@
+/* Provides a barricade for altering element values, such as linear property values and
+ * location values. Primarily, it makes sure the element is not locked, then checks if the
+ * change can fit on the canvas (for example, a location change has to be on the canvas, and
+ * the element can't overlap with another element
+ *
+ * Singleton, as we only want one access to this class.
+ * Final, as nothing should extend this
+ */
+final case class WireframeBarricade private() {
+
+}
+
+object WireframeBarricade {
+
+	// TODO: log stuff when false
+
+	// Attempts to change an element's width
+	def setWidth(element: Element, width: Int): Boolean = {
+		if (isUnlocked(element) && isValidWidth(element, width)) {
+			element.width = width
+			true
+		}
+		false
+	}
+
+	// Attempts to change an element's height
+	def setHeight(element: Element, height: Int): Boolean = {
+		if (isUnlocked(element) && validHeight(element, width)) {
+			element.height = height
+			true
+		}
+		false
+	}
+
+	// Returns based on if an element is unlocked and the group its in is unlocked
+	private def isUnlocked(element: Element): Boolean = {
+		!element.locked && isUnlockedGroupContaining(element)
+	}
+
+	/* Returns based on if a group containing an element is unlocked.
+	 * Works by finding the group (if any) that contain the element, then filters it out if
+	 * the group is locked. Then if we have a group that's unlocked, it meets the condition of this function call
+	 */
+	private def isUnlockedGroupContaining(element: Element): Boolean = {
+		// Finds a group (if any) that contains the element in question
+		val groupWithElement = Canvas.instance.groups.filter(group => group.elements.contains(element))
+
+		// Filters this group out if it's locked
+		val unlockedGroupWithElement = groupWithElement.filter(group => !group.locked)
+
+		// Therefore, we are left with a group that contains our element and the group is unlocked
+		unlockedGroupWithElement.nonEmpty
+	}
+
+	// Checks if a proposed width is in the canvas and doesn't overlap anything
+	private def isValidWidth(element: Element, width: Int): Boolean = {
+		isWidthInCanvas(element, width) && isWidthOverlapping(element, width)
+	}
+
+	// Checks if a proposed width is within the canvas
+	private def isWidthInCanvas(element: Element, width: Int): Boolean = {
+		(element.x + width) <= Canvas.instance.width
+	}
+
+	// Checks if a proposed width on an element ends up overlapping the other elements
+	private def isWidthOverlapping(element: Element, width: Int): Boolean = {
+		var otherElements = Canvas.instance.elements.filterNot(_ == element)
+
+		// Filter all the elements that aren't to the left of our element
+		otherElements = otherElements.filterNot(e => (e.x + e.width) < element.x)
+
+		// Filter all the elements that aren't to the right of our element
+		otherElements = otherElements.filterNot(e => e.x > element.x + width)
+
+		// If any elements remain in this list, they overlap with our proposed element change
+		otherElements.nonEmpty
+	}
+
+	// Checks if a proposed height is in the canvas and doesn't overlap anything
+	private def isValidHeight(element: Element, height: Int): Boolean = {
+		isHeightInCanvas(element, height) && isHeightOverlapping(element, height)
+	}
+
+	// Checks if a proposed height is within the canvas
+	private def isHeightInCanvas(element: Element, height: Int): Boolean = {
+		(element.x + height) <= Canvas.instance.height
+	}
+
+	// Checks if a proposed height on an element ends up overlapping the other elements
+	private def isHeightOverlapping(element: Element, height: Int): Boolean = {
+		var otherElements = Canvas.instance.elements.filterNot(_ == element)
+
+		// Filter all the elements that aren't above (vertically up) from our element
+		otherElements = otherElements.filterNot(e => (e.y + e.height) < element.y)
+
+		// Filter all the elements that aren't below (vertically down) from our element
+		otherElements = otherElements.filterNot(e => e.y > element.y +height)
+
+		// If any elements remain in this list, they overlap with our proposed element change
+		otherElements.nonEmpty
+	}
+
+	// Singleton implementation
+	private val _instance = WireframeBarricade()
+	def instance: WireframeBarricade = _instance
+}
