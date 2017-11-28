@@ -141,6 +141,26 @@ object WireframeBarricade {
 		}
 	}
 
+	// Attempts to add an annotation to an element. Can't happen if the element is locked
+	def annotate(element: Element, text: String): Boolean = {
+		if (isUnlocked(element)){
+			element.annotate(text)
+			true
+		}
+
+		false
+	}
+
+	// Attempts to add an annotation to a group. Can't happen if the group is locked or group elements are too.
+	def annotate(group: Group, annotation: Annotation): Boolean = {
+		if (!group.locked && group.elements.forall(e => isUnlocked(e))) {
+			group.annotate(annotation)
+			true
+		}
+
+		false
+	}
+
 	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)
 	private def isMoveValid(element: Element): Boolean = {
 		isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)
