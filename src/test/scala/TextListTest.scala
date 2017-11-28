@@ -54,4 +54,9 @@ class TextListTest extends FlatSpec {
 		val text = new TextList()
 		assertThrows[IndexOutOfBoundsException](text.remove(0))
 	}
+
+	behavior of "final static fields"
+	it should "hold the correct TYPE" in {
+		assert(TextList.TYPE == "TextList")
+	}
 }
