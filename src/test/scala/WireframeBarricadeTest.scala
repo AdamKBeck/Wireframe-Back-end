@@ -22,5 +22,36 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		assert(result.isEmpty)
 	}
 
+	// Good data: normal and max config
+	it should "test nominally, normal/max config" in {
+		clear()
+		val canvas = Canvas.instance
 
+		val elementsExcept = PrivateMethod[List[Element]]('elementsExcept)
+		val element = new ProgressBar()
+		val otherElement = new Slider()
+		canvas.add(element)
+		canvas.add(otherElement)
+		canvas.add(otherElement)
+		canvas.add(otherElement)
+		canvas.add(otherElement)
+		val result = WireframeBarricade.instance.invokePrivate(elementsExcept(element))
+
+		assert(result.size == 4)
+	}
+
+	// Bad data: no elements are on the canvas
+	it should "test bad data, no elements on the canvas" in {
+		clear()
+
+		val canvas = Canvas.instance
+
+		val element = new ProgressBar()
+		val elementsExcept = PrivateMethod[List[Element]]('elementsExcept)
+		val result = WireframeBarricade.instance.invokePrivate(elementsExcept(element))
+
+		assert(result.isEmpty)
+	}
+
+	
 }
