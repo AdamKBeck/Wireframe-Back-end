@@ -1,0 +1,5 @@
+Some tests fail certain times due to race conditions.
+
+I'm constantly adding and removing elements to my canvas, and some tests seem to run parallel which is an issue.
+
+I'm going to make my stress test sleep for a while before it starts, to ensure that it runs separately from everything else.
