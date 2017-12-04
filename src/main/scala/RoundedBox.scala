@@ -3,8 +3,7 @@ package wireframe
 
 import scala.collection.mutable.ListBuffer
 
-/*  Note the protected constructor similar to the Element class
- * 	Final, as no class should extend this
+ /* Final, as no class should extend this
  */
 final class RoundedBox (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,

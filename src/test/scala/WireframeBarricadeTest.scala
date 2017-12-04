@@ -952,7 +952,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val setWidth = PrivateMethod[Boolean]('setWidth)
-		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10))
+		val result = element.barricadeInstance.invokePrivate(setWidth(element, 10))
 
 		assert(result)
 	}
@@ -965,7 +965,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val setWidth = PrivateMethod[Boolean]('setWidth)
-		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10))
+		val result = element.barricadeInstance.invokePrivate(setWidth(element, 10))
 
 		assert(!result)
 	}
@@ -977,7 +977,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val setWidth = PrivateMethod[Boolean]('setWidth)
-		val result = WireframeBarricade.instance.invokePrivate(setWidth(element, 10000))
+		val result = element.barricadeInstance.invokePrivate(setWidth(element, 10000))
 
 		assert(!result)
 	}

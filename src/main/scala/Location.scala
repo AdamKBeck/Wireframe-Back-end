@@ -2,7 +2,6 @@
 package wireframe
 
 final case class Location (private var _x: Int, private var _y: Int) {
-
 	// Public getters
 	def x: Int = _x
 	def y: Int = _y

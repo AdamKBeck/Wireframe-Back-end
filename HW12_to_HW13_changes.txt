@@ -1,0 +1,7 @@
+1. Classes with protected constructor changed to be an abstract class.
+
+2. Element now has a field for barricade access. This follows the state pattern. 
+
+For example, when an element is locked, the barricade instance becomes the locked class. 
+
+Code syntax in the testing classes was updated to accomodate this.

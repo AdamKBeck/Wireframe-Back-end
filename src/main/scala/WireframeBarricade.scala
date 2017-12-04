@@ -3,13 +3,13 @@
  * change can fit on the canvas (for example, a location change has to be on the canvas, and
  * the element can't overlap with another element
  *
- * Singleton, as we only want one access to this class.
- * Final, as nothing should extend this
+ *
+ *
  */
 
 package wireframe
 
-final case class WireframeBarricade private() {
+sealed case class WireframeBarricade () {
 	// Attempts to change an element's width
 	def setWidth(element: Element, width: Int): Boolean = {
 		if (isUnlocked(element) && isValidWidth(element, width)) {
@@ -314,9 +314,28 @@ final case class WireframeBarricade private() {
 
 }
 
+final class WireframeBarricadeLocked private() extends WireframeBarricade {
+	override def setWidth(element: Element, width: Int): Boolean = {
+		Logger.instance.log(message = "width could not be set")
+		println("testing")
+		false
+	}
+}
+
+object WireframeBarricadeLocked {
+	// Singleton implementation
+	private val _instance: WireframeBarricadeLocked = new WireframeBarricadeLocked()
+	def instance: WireframeBarricadeLocked = _instance
+}
+
 object WireframeBarricade {
 	// Singleton implementation
-	private val _instance = WireframeBarricade()
+	private var _instance: WireframeBarricade = WireframeBarricade()
 	def instance: WireframeBarricade = _instance
+
+	// State pattern implementation
+	def setLockedState(): Unit = _instance = WireframeBarricadeLocked.instance
+	def setUnlockedState(): Unit = _instance = instance
+
 
 }

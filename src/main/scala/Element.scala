@@ -6,11 +6,15 @@ package wireframe
 
 import scala.collection.mutable.ListBuffer
 
-// Protected, as I don't want to create an element. I only want to create it from its subclasses
 abstract class Element (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Lockable{
+
+	var barricadeInstance: WireframeBarricade = WireframeBarricade.instance
+
+	def setLockedBarricadeState(): Unit = barricadeInstance = WireframeBarricadeLocked.instance
+	def setUnlockedBarricadeState(): Unit = barricadeInstance = WireframeBarricade.instance
 
 	// Public getters
 	def linearProperty: LinearProperty = _linearProperty
@@ -18,7 +22,10 @@ abstract class Element (private var _linearProperty: LinearProperty = LinearProp
 	def annotations: List[Annotation] = _annotations.toList // Defensive copy as a list is immutable
 
 	// Public setters
-	def locked_=(value: Boolean): Unit = _locked = value
+	def locked_=(value: Boolean): Unit = {
+		if (value) setLockedBarricadeState() else setUnlockedBarricadeState()
+		_locked = value
+	}
 
 	// Public functions
 	// Adds an annotation to this element. the annotation's linear property is the element's
