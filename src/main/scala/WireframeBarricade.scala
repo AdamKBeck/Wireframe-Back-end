@@ -84,15 +84,8 @@ sealed case class WireframeBarricade () {
 
 	// Attempts to bring an element to the top
 	def bringToTop(element: Element): Boolean = {
-		if (isUnlocked(element)) {
 			element.layerPriority = LinearProperty.TOP
 			true
-		}
-
-		else {
-			Logger.instance.log(message = "Element could not be brought to top")
-			false
-		}
 	}
 
 	// Attempts to bring an element to the bottom
@@ -327,6 +320,11 @@ final class WireframeBarricadeLocked() extends WireframeBarricade {
 
 	override def setLocation(newX: Int, newY: Int, element: Element): Boolean = {
 		Logger.instance.log(message = "location could not be set, reason: LOCKED")
+		false
+	}
+
+	override def bringToTop(element: Element): Boolean = {
+		Logger.instance.log(message = "Element could not be brought to top")
 		false
 	}
 }

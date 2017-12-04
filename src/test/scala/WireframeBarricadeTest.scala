@@ -817,21 +817,20 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val bringToTop = PrivateMethod[Boolean]('bringToTop)
-		val result = WireframeBarricade.instance.invokePrivate(bringToTop(element))
+		val result = element.barricadeInstance.invokePrivate(bringToTop(element))
 
 		assert(result)
 	}
 
 	// Bad data: element is locked
 	// Strucutred basis: if statement is false
-	behavior of "bringToTop"
 	it should "if statement is false" in {
 		clear()
 		val element = new Slider()
 		element.locked = true
 
 		val bringToTop = PrivateMethod[Boolean]('bringToTop)
-		val result = WireframeBarricade.instance.invokePrivate(bringToTop(element))
+		val result = element.barricadeInstance.invokePrivate(bringToTop(element))
 
 		assert(!result)
 	}
