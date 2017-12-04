@@ -2,9 +2,6 @@
  * location values. Primarily, it makes sure the element is not locked, then checks if the
  * change can fit on the canvas (for example, a location change has to be on the canvas, and
  * the element can't overlap with another element
- *
- *
- *
  */
 
 package wireframe
@@ -12,27 +9,26 @@ package wireframe
 sealed case class WireframeBarricade () {
 	// Attempts to change an element's width
 	def setWidth(element: Element, width: Int): Boolean = {
-		if (isUnlocked(element) && isValidWidth(element, width)) {
+		if (isValidWidth(element, width)) {
 			element.width = width
 			true
 		}
 		else {
-			Logger.instance.log(message = "width could not be set")
+			Logger.instance.log(message = "width could not be set, reason: INVALID WIDTH")
 			false
 		}
 	}
 
 	// Attempts to change an element's height
 	def setHeight(element: Element, height: Int): Boolean = {
-		if (isUnlocked(element) && isValidHeight(element, height)) {
+		if (isValidHeight(element, height)) {
 			element.height = height
 			true
 		}
 		else {
-			Logger.instance.log(message = "height could not be set")
+			Logger.instance.log(message = "height could not be set, reason: INVALID HEIGHT")
 			false
 		}
-
 	}
 
 	// Attempts to change an element's position. This also changes the group too
@@ -55,7 +51,7 @@ sealed case class WireframeBarricade () {
 			else {
 				element.x = oldX
 				element.y = oldY
-				Logger.instance.log(message = "The location of a single element cannot be moved")
+				Logger.instance.log(message = "The location of a single element cannot be moved, reason: INVALID LOCATION")
 				false
 			}
 		}
@@ -314,28 +310,27 @@ sealed case class WireframeBarricade () {
 
 }
 
-final class WireframeBarricadeLocked private() extends WireframeBarricade {
+object WireframeBarricade {
+	def instance: WireframeBarricade = WireframeBarricade()
+}
+
+final class WireframeBarricadeLocked() extends WireframeBarricade {
 	override def setWidth(element: Element, width: Int): Boolean = {
-		Logger.instance.log(message = "width could not be set")
-		println("testing")
+		Logger.instance.log(message = "width could not be set, reason: LOCKED")
+		false
+	}
+
+	override def setHeight(element: Element, height: Int): Boolean = {
+		Logger.instance.log(message = "height could not be set, reason: LOCKED")
+		false
+	}
+
+	override def setLocation(newX: Int, newY: Int, element: Element): Boolean = {
+		Logger.instance.log(message = "location could not be set, reason: LOCKED")
 		false
 	}
 }
 
 object WireframeBarricadeLocked {
-	// Singleton implementation
-	private val _instance: WireframeBarricadeLocked = new WireframeBarricadeLocked()
-	def instance: WireframeBarricadeLocked = _instance
-}
-
-object WireframeBarricade {
-	// Singleton implementation
-	private var _instance: WireframeBarricade = WireframeBarricade()
-	def instance: WireframeBarricade = _instance
-
-	// State pattern implementation
-	def setLockedState(): Unit = _instance = WireframeBarricadeLocked.instance
-	def setUnlockedState(): Unit = _instance = instance
-
-
+	def instance: WireframeBarricadeLocked = new WireframeBarricadeLocked()
 }

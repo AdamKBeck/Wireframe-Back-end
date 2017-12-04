@@ -845,7 +845,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val setLocation = PrivateMethod[Boolean]('setLocation)
-		val result = WireframeBarricade.instance.invokePrivate(setLocation(10, 10, element))
+		val result = element.barricadeInstance.invokePrivate(setLocation(10, 10, element))
 
 		assert(result)
 	}
@@ -865,20 +865,20 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		group.add(element2)
 
 		val setLocation = PrivateMethod[Boolean]('setLocation)
-		val result = WireframeBarricade.instance.invokePrivate(setLocation(11, 10, element))
+		val result = element.barricadeInstance.invokePrivate(setLocation(11, 10, element))
 
 		assert(result)
 	}
 
 	// Bad data: element is locked
-	// Strucutued basis: first if true, inner if false
+	// Structured basis: first if true, inner if false
 	it should "first if statement true, inner false" in {
 		clear()
 		val element = new Slider()
 		element.locked = true
 
 		val setLocation = PrivateMethod[Boolean]('setLocation)
-		val result = WireframeBarricade.instance.invokePrivate(setLocation(10, 10, element))
+		val result = element.barricadeInstance.invokePrivate(setLocation(10, 10, element))
 
 		assert(!result)
 	}
@@ -901,7 +901,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val setLocation = PrivateMethod[Boolean]('setLocation)
-		val result = WireframeBarricade.instance.invokePrivate(setLocation(11, 10, element))
+		val result = element.barricadeInstance.invokePrivate(setLocation(11, 10, element))
 
 		assert(!result)
 	}
@@ -914,7 +914,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val setHeight = PrivateMethod[Boolean]('setHeight)
-		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10))
+		val result = element.barricadeInstance.invokePrivate(setHeight(element, 10))
 
 		assert(result)
 	}
@@ -927,7 +927,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val setHeight = PrivateMethod[Boolean]('setHeight)
-		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10))
+		val result = element.barricadeInstance.invokePrivate(setHeight(element, 10))
 
 		assert(!result)
 	}
@@ -939,12 +939,12 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val setHeight = PrivateMethod[Boolean]('setHeight)
-		val result = WireframeBarricade.instance.invokePrivate(setHeight(element, 10000))
+		val result = element.barricadeInstance.invokePrivate(setHeight(element, 10000))
 
 		assert(!result)
 	}
 
-	// Strucutred basis, all conditions true
+	// Structured basis, all conditions true
 	// Good data: width is valid
 	behavior of "setWidth"
 	it should "test nominally, all conditions true" in {
