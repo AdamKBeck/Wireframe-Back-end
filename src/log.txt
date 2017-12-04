@@ -5403,3 +5403,757 @@ The location of the elements in this element's group cannot be moved
 This element or its group is not unlocked
 This element cannot be moved here
 The location of the elements in this element's group cannot be moved
+This element's height doesn't fit in the canvas
+This element's height overlaps other elements
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's width doesn't fit in the canvas
+This element's width is overlapping
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element can't have this width, it's invalid
+There is not an unlocked group containing this element
+This element or its group is not unlocked
+This element or its group is not unlocked
+This element's width is overlapping
+This element's height overlaps other elements
+This element or its group is not unlocked
+This element cannot be moved here
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element cannot be moved here
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+This group cannot be annotated
+This element or its group is not unlocked
+This group cannot be annotated
+This element or its group is not unlocked
+This element cannot be annotated
+This element already has a group on the canvas
+This element or its group is not unlocked
+This element cannot be grouped to this group
+This element or its group is not unlocked
+The layer priority could not be set for the element
+This element or its group is not unlocked
+Element could not be brought to bottom
+This element or its group is not unlocked
+Element could not be brought to top
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of a single element cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's height overlaps other elements
+This element or its group is not unlocked
+height could not be set
+This element's height doesn't fit in the canvas
+This element's height is invalid
+height could not be set
+This element's width is overlapping
+This element or its group is not unlocked
+width could not be set
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+width could not be set
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+width could not be set
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved
+This element's height doesn't fit in the canvas
+This element's height overlaps other elements
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's width doesn't fit in the canvas
+This element's width is overlapping
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element can't have this width, it's invalid
+There is not an unlocked group containing this element
+This element or its group is not unlocked
+This element or its group is not unlocked
+This element's width is overlapping
+This element's height overlaps other elements
+This element or its group is not unlocked
+This element cannot be moved here
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element cannot be moved here
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+This group cannot be annotated
+This element or its group is not unlocked
+This group cannot be annotated
+This element or its group is not unlocked
+This element cannot be annotated
+This element already has a group on the canvas
+This element or its group is not unlocked
+This element cannot be grouped to this group
+This element or its group is not unlocked
+The layer priority could not be set for the element
+This element or its group is not unlocked
+Element could not be brought to bottom
+This element or its group is not unlocked
+Element could not be brought to top
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of a single element cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's height overlaps other elements
+This element or its group is not unlocked
+height could not be set
+This element's height doesn't fit in the canvas
+This element's height is invalid
+height could not be set
+This element's width is overlapping
+This element or its group is not unlocked
+width could not be set
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+width could not be set
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+width could not be set
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved

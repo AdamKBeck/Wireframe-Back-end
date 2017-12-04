@@ -10,7 +10,6 @@
 package wireframe
 
 final case class WireframeBarricade private() {
-
 	// Attempts to change an element's width
 	def setWidth(element: Element, width: Int): Boolean = {
 		if (isUnlocked(element) && isValidWidth(element, width)) {

@@ -7,7 +7,7 @@ package wireframe
 import scala.collection.mutable.ListBuffer
 
 // Protected, as I don't want to create an element. I only want to create it from its subclasses
-class Element protected (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
+abstract class Element (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer())
 	extends Lockable{
