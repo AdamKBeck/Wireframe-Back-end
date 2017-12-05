@@ -167,7 +167,7 @@ sealed case class WireframeBarricade () {
 		val groupWithElement = groupWith(element)
 
 		// Filters this group out if it's locked
-		val unlockedGroupWithElement = groupWithElement.filter(group => !group.locked)
+		val unlockedGroupWithElement = groupWithElement.filter(group => group.locked)
 
 		// Therefore, we are left with a group that contains our element and the group is unlocked
 		if (unlockedGroupWithElement.nonEmpty || groupWith(element).size == 0) {

@@ -527,6 +527,22 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		assert(!result)
 	}
 
+	// Bad data: an element's group is locked
+	it should "test structured basis, bad data: locked group" in {
+		clear()
+
+		val canvas = Canvas.instance
+		val element = new Slider(_value = 3)
+		element.locked = false
+		val group = Group()
+		group.add(element)
+		group.locked = true
+
+		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
+		val result = element.barricadeInstance.invokePrivate(isUnlocked(element))
+
+		assert(!result)
+	}
 	// Structured basis, all boolean conditions true
 	behavior of "isMoveValid"
 	it should "test nominally, all boolean conditions true" in {

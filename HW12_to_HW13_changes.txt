@@ -5,3 +5,7 @@
 For example, when an element is locked, the barricade instance becomes the locked class. 
 
 Code syntax in the testing classes was updated to accomodate this.
+
+3. WireframeBarricade now has a sublcass, WireframeBarricadeLocked, which follows the state pattern. When an element is locked, it's access to these barricade classes are changed appropriately.
+
+4. UML diagram is changed to follow these changes.
