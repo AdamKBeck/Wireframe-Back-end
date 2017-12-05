@@ -1,0 +1,21 @@
+1. Commenting self-use of over-ridable methods
+
+2. For methods that override, start with "this implementation..."
+
+3. Endline comments for data declarations
+
+4. Comment input data for routines
+
+5. Comment before if, for, etc.
+
+6. Comment end of nested if, for, etc., if it's complicated
+
+7. Describe a routine in 1-2 sentences
+
+8. Comment name, date, version, etc. above each file
+
+9. Comment why a file has more than 1 class (e.g. barricade for me)
+
+10. Comment in/out paramater data for a routine if the paramaters are too long (this is just for clarity as the book suggests, I do not belive any routine has enough paramaters to do this)
+
+11. Document global data, and routines that modify global data
