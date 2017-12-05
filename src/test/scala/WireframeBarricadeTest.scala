@@ -1033,10 +1033,9 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 				canvas.add(temp)
 			}
-			val barricade = WireframeBarricade.instance
 
 			assert(!canvas.elements.forall(element =>
-				barricade.setLocation(element.x, element.y, element)))
+				element.barricadeInstance.setLocation(element.x, element.y, element)))
 
 			clear()
 		}
@@ -1119,10 +1118,9 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 			canvas.add(group)
 
-			val barricade = WireframeBarricade.instance
 			// Now we make sure we can place this on the canvas
 			assert(canvas.elements.forall(element =>
-				barricade.setLocation(elementA.x, elementA.y, elementA)))
+				element.barricadeInstance.setLocation(elementA.x, elementA.y, elementA)))
 		}
 
 	}
@@ -1138,7 +1136,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 		canvas.add(element)
 
-		val barricade = WireframeBarricade.instance
+		val barricade = element.barricadeInstance
 
 		assert(barricade.setWidth(element, 10))
 	}
@@ -1159,7 +1157,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 		canvas.add(group2)
 
-		val barricade = WireframeBarricade.instance
+		val barricade = element.barricadeInstance
 		assert(barricade.setLocation(10, 10, element))
 	}
 
@@ -1181,7 +1179,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 		canvas.add(group2)
 
-		val barricade = WireframeBarricade.instance
+		val barricade = element.barricadeInstance
 		assert(!barricade.setLocation(10, 10, element))
 	}
 }
