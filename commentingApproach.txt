@@ -4,11 +4,9 @@
 
 3. Endline comments for data declarations
 
-4. Comment input data for routines
-
 5. Comment before if, for, etc.
 
-6. Comment end of nested if, for, etc., if it's complicated
+6. Comment end of nested if, for, etc., if it's complicated. Not really used, the extent of this use is comment an else branch. It's good I didn't use this, as it means that my complexity would probably be higher than it should be.
 
 7. Describe a routine in 1-2 sentences
 
@@ -18,7 +16,7 @@
 
 10. Comment in/out paramater data for a routine if the paramaters are too long (this is just for clarity as the book suggests, I do not belive any routine has enough paramaters to do this)
 
-11. Document global data, and routines that modify global data
+11. Document global data, and routines that modify global data. This is shown in Element, seLocked... and setUnlockedBarricadeState()
 
 At the time of this writing, SBT doesn’t show where the output from this command is written to, but with Scala 2.10.0, SBT 0.12.3 places the root index.html Scaladoc file at target/scala-2.10/api/index.html under the root directory of your project. Other commands, including package-doc and publish, do indicate where their output is located.
 

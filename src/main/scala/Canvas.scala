@@ -4,7 +4,6 @@ package wireframe
 import scala.collection.mutable.ListBuffer
 
 /**
-  * Final, as nothing should extend this.
   * EECS 293
   * Created by Adam Beck on 12/5/2017
   * akb93@case.edu

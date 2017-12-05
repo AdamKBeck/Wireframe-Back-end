@@ -26,12 +26,14 @@ abstract class Element (private var _linearProperty: LinearProperty = LinearProp
 	var barricadeInstance: WireframeBarricade = WireframeBarricade.instance
 
 	/**
-	  * Sets the barricade accessor to be of the locked type
+	  * Sets the barricade accessor to be of the locked type.
+	  * Modifies the global barricadeInstance
 	  */
 	def setLockedBarricadeState(): Unit = barricadeInstance = WireframeBarricadeLocked.instance
 
 	/**
 	  * Sets the barricade accessor to be of the default, unlocked type
+	  * Modifies the global barricadeInstance
 	  */
 	def setUnlockedBarricadeState(): Unit = barricadeInstance = WireframeBarricade.instance
 
