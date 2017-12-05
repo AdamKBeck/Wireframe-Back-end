@@ -9,7 +9,7 @@ import scala.collection.mutable.ListBuffer
   * Version 1.0
   *
   * Bar: A bar is an Element for the wireframe. It has the properties of showing a value/percentage
-  * Abstract, as only sublcasses should have objects being created from them. Bar doesn't exist on its own.
+  * Abstract, as only subclasses should have objects being created from them. Bar doesn't exist on its own.
   *
   * @param _linearProperty the linear properties that the bar follows
   * @param _locked the status indicating if this bar is locked

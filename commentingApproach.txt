@@ -21,3 +21,5 @@
 11. Document global data, and routines that modify global data
 
 At the time of this writing, SBT doesn’t show where the output from this command is written to, but with Scala 2.10.0, SBT 0.12.3 places the root index.html Scaladoc file at target/scala-2.10/api/index.html under the root directory of your project. Other commands, including package-doc and publish, do indicate where their output is located.
+
+"sbt doc" to document

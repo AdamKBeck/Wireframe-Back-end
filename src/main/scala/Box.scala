@@ -9,7 +9,7 @@ import scala.collection.mutable.ListBuffer
   * Version 1.0
   *
   * Box: A type of Element that has a boxed shape.
-  * Abstract, as only sublcasses should have objects being created from them. Box doesn't exist on its own.
+  * Abstract, as only subclasses should have objects being created from them. Box doesn't exist on its own.
   *
   * @param _linearProperty the linear properties that the box follows
   * @param _locked // the status indicating if the box is locked
