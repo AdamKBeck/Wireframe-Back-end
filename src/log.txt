@@ -11771,3 +11771,365 @@ The location of the elements in this element's group cannot be moved
 This element or its group is not unlocked
 This element cannot be moved here
 The location of the elements in this element's group cannot be moved
+This element's height doesn't fit in the canvas
+This element's height overlaps other elements
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element's width doesn't fit in the canvas
+This element's width is overlapping
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element can't have this width, it's invalid
+There is not an unlocked group containing this element
+This element or its group is not unlocked
+This element or its group is not unlocked
+This element's width is overlapping
+This element's height overlaps other elements
+This element or its group is not unlocked
+This element cannot be moved here
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+This element cannot be moved here
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+This group cannot be annotated
+This element or its group is not unlocked
+This group cannot be annotated
+This element already has a group on the canvas
+This element cannot be grouped to this group, reason: LOCKED
+The layer priority could not be set for the element, reason: LOCKED
+Element could not be brought to bottom, reason: LOCKED
+Element could not be brought to top, reason: LOCKED
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element's width is overlapping
+This element's height doesn't fit in the canvas
+This element's height is invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+location could not be set, reason: LOCKED
+location could not be set, reason: LOCKED
+This element's height overlaps other elements
+height could not be set, reason: LOCKED
+This element's height doesn't fit in the canvas
+This element's height is invalid
+height could not be set, reason: INVALID HEIGHT
+This element's width is overlapping
+width could not be set, reason: LOCKED
+This element's width doesn't fit in the canvas
+This element can't have this width, it's invalid
+width could not be set, reason: INVALID WIDTH
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of a single element cannot be moved, reason: INVALID LOCATION
+This element's width is overlapping
+This element can't have this width, it's invalid
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved
+This element or its group is not unlocked
+This element cannot be moved here
+The location of the elements in this element's group cannot be moved

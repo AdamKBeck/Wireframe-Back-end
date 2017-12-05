@@ -697,7 +697,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group2)
 
 		val group = PrivateMethod[Boolean]('group)
-		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+		val result = element.barricadeInstance.invokePrivate(group(element, group1))
 
 		assert(!result)
 	}
@@ -712,7 +712,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group1)
 
 		val group = PrivateMethod[Boolean]('group)
-		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+		val result = element.barricadeInstance.invokePrivate(group(element, group1))
 
 		assert(result)
 	}
@@ -729,7 +729,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group1)
 
 		val group = PrivateMethod[Boolean]('group)
-		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+		val result = element.barricadeInstance.invokePrivate(group(element, group1))
 
 		assert(!result)
 	}
@@ -748,7 +748,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group1)
 
 		val group = PrivateMethod[Boolean]('group)
-		val result = WireframeBarricade.instance.invokePrivate(group(element, group1))
+		val result = element.barricadeInstance.invokePrivate(group(element, group1))
 
 		assert(!result)
 	}
@@ -760,10 +760,9 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		clear()
 		val element = new Slider()
 
-
 		val p: Byte = 3
 		val setLayerPriority = PrivateMethod[Boolean]('setLayerPriority)
-		val result = WireframeBarricade.instance.invokePrivate(setLayerPriority(p, element))
+		val result = element.barricadeInstance.invokePrivate(setLayerPriority(p, element))
 
 		assert(result)
 	}
@@ -778,7 +777,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 		val p: Byte = 3
 		val setLayerPriority = PrivateMethod[Boolean]('setLayerPriority)
-		val result = WireframeBarricade.instance.invokePrivate(setLayerPriority(p, element))
+		val result = element.barricadeInstance.invokePrivate(setLayerPriority(p, element))
 
 		assert(result)
 	}
@@ -791,7 +790,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider()
 
 		val bringToBottom = PrivateMethod[Boolean]('bringToBottom)
-		val result = WireframeBarricade.instance.invokePrivate(bringToBottom(element))
+		val result = element.barricadeInstance.invokePrivate(bringToBottom(element))
 
 		assert(result)
 	}
@@ -804,7 +803,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val bringToBottom = PrivateMethod[Boolean]('bringToBottom)
-		val result = WireframeBarricade.instance.invokePrivate(bringToBottom(element))
+		val result = element.barricadeInstance.invokePrivate(bringToBottom(element))
 
 		assert(!result)
 	}

@@ -84,33 +84,20 @@ sealed case class WireframeBarricade () {
 
 	// Attempts to bring an element to the top
 	def bringToTop(element: Element): Boolean = {
-			element.layerPriority = LinearProperty.TOP
-			true
+		element.layerPriority = LinearProperty.TOP
+		true
 	}
 
 	// Attempts to bring an element to the bottom
 	def bringToBottom(element: Element): Boolean = {
-		if (isUnlocked(element)) {
-			element.layerPriority = LinearProperty.BOTTOM
-			true
-		}
-
-		else {
-			Logger.instance.log(message = "Element could not be brought to bottom")
-			false
-		}
+		element.layerPriority = LinearProperty.BOTTOM
+		true
 	}
 
 	// Attempts to set the layer priority of an element
 	def setLayerPriority(priority: Byte, element: Element): Boolean = {
-		if (isUnlocked(element)) {
-			element.layerPriority = priority
-			true
-		}
-		else {
-			Logger.instance.log(message = "The layer priority could not be set for the element")
-			false
-		}
+		element.layerPriority = priority
+		true
 	}
 
 	// Attempts to add an element to a group. Can't happen if it's in another group, or the group is locked
@@ -125,28 +112,15 @@ sealed case class WireframeBarricade () {
 
 		// Otherwise, make sure the element is not locked and neither is the group
 		else {
-			if (isUnlocked(element)) {
-				group.add(element)
-				true
-			}
-
-			else {
-				Logger.instance.log(message = "This element cannot be grouped to this group")
-				false
-			}
+			group.add(element)
+			true
 		}
 	}
 
 	// Attempts to add an annotation to an element. Can't happen if the element is locked
 	def annotate(element: Element, text: String): Boolean = {
-		if (isUnlocked(element)){
-			element.annotate(text)
-			true
-		}
-		else {
-			Logger.instance.log(message = "This element cannot be annotated")
-			false
-		}
+		element.annotate(text)
+		true
 	}
 
 	// Attempts to add an annotation to a group. Can't happen if the group is locked or group elements are too.
@@ -324,9 +298,30 @@ final class WireframeBarricadeLocked() extends WireframeBarricade {
 	}
 
 	override def bringToTop(element: Element): Boolean = {
-		Logger.instance.log(message = "Element could not be brought to top")
+		Logger.instance.log(message = "Element could not be brought to top, reason: LOCKED")
 		false
 	}
+
+	override def bringToBottom(element: Element): Boolean = {
+		Logger.instance.log(message = "Element could not be brought to bottom, reason: LOCKED")
+		false
+	}
+
+	override def setLayerPriority(priority: Byte, element: Element): Boolean = {
+		Logger.instance.log(message = "The layer priority could not be set for the element, reason: LOCKED")
+		false
+	}
+
+	override def group(element: Element, group: Group): Boolean = {
+		Logger.instance.log(message = "This element cannot be grouped to this group, reason: LOCKED")
+		false
+	}
+
+	override def annotate(element: Element, text: String): Boolean = {
+		Logger.instance.log(message = "This element cannot be annotated, reason: LOCKED")
+		false
+	}
+
 }
 
 object WireframeBarricadeLocked {
