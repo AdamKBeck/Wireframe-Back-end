@@ -19,7 +19,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val elementsExcept = PrivateMethod[List[Element]]('elementsExcept)
 		val element = new ProgressBar()
 		canvas.add(element)
-		val result = WireframeBarricade.instance.invokePrivate(elementsExcept(element))
+		val result = element.barricadeInstance.invokePrivate(elementsExcept(element))
 
 		assert(result.isEmpty)
 	}
@@ -37,7 +37,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(otherElement)
 		canvas.add(otherElement)
 		canvas.add(otherElement)
-		val result = WireframeBarricade.instance.invokePrivate(elementsExcept(element))
+		val result = element.barricadeInstance.invokePrivate(elementsExcept(element))
 
 		assert(result.size == 4)
 	}
@@ -50,7 +50,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 		val element = new ProgressBar()
 		val elementsExcept = PrivateMethod[List[Element]]('elementsExcept)
-		val result = WireframeBarricade.instance.invokePrivate(elementsExcept(element))
+		val result = element.barricadeInstance.invokePrivate(elementsExcept(element))
 
 		assert(result.isEmpty)
 	}
@@ -73,7 +73,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 
 		val groupWith = PrivateMethod[List[Group]]('groupWith)
-		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		val result = elementA.barricadeInstance.invokePrivate(groupWith(elementA))
 		assert(result.size == 1)
 	}
 
@@ -93,7 +93,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 
 		val groupWith = PrivateMethod[List[Group]]('groupWith)
-		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		val result = elementA.barricadeInstance.invokePrivate(groupWith(elementA))
 		assert(result.isEmpty)
 	}
 
@@ -116,7 +116,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 
 		val groupWith = PrivateMethod[List[Group]]('groupWith)
-		val result = WireframeBarricade.instance.invokePrivate(groupWith(elementA))
+		val result = elementA.barricadeInstance.invokePrivate(groupWith(elementA))
 		assert(result.size == 2)
 	}
 
@@ -136,7 +136,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementB)
 
 		val isHeightOverlapping = PrivateMethod[Boolean]('isHeightOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isHeightOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isHeightOverlapping(elementA,
 			elementA.height))
 
 		assert(result)
@@ -160,7 +160,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementC)
 
 		val isHeightOverlapping = PrivateMethod[Boolean]('isHeightOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isHeightOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isHeightOverlapping(elementA,
 			elementA.height))
 
 		assert(result)
@@ -186,7 +186,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementC)
 
 		val isHeightOverlapping = PrivateMethod[Boolean]('isHeightOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isHeightOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isHeightOverlapping(elementA,
 			elementA.height))
 
 		assert(!result)
@@ -201,7 +201,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 20
 
 		val isHeightInCanvas = PrivateMethod[Boolean]('isHeightInCanvas)
-		val result = WireframeBarricade.instance.invokePrivate(isHeightInCanvas(element,
+		val result = element.barricadeInstance.invokePrivate(isHeightInCanvas(element,
 			element.height))
 
 		assert(result)
@@ -215,7 +215,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 1600
 
 		val isHeightInCanvas = PrivateMethod[Boolean]('isHeightInCanvas)
-		val result = WireframeBarricade.instance.invokePrivate(isHeightInCanvas(element,
+		val result = element.barricadeInstance.invokePrivate(isHeightInCanvas(element,
 			element.height))
 
 		assert(!result)
@@ -231,7 +231,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 23
 
 		val isValidHeight = PrivateMethod[Boolean]('isValidHeight)
-		val result = WireframeBarricade.instance.invokePrivate(isValidHeight(element,
+		val result = element.barricadeInstance.invokePrivate(isValidHeight(element,
 			element.height))
 
 		assert(result)
@@ -245,7 +245,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 1600
 
 		val isValidHeight = PrivateMethod[Boolean]('isValidHeight)
-		val result = WireframeBarricade.instance.invokePrivate(isValidHeight(element,
+		val result = element.barricadeInstance.invokePrivate(isValidHeight(element,
 			element.height))
 
 		assert(!result)
@@ -264,7 +264,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		Canvas.instance.add(element2)
 
 		val isValidHeight = PrivateMethod[Boolean]('isValidHeight)
-		val result = WireframeBarricade.instance.invokePrivate(isValidHeight(element,
+		val result = element.barricadeInstance.invokePrivate(isValidHeight(element,
 			element.height))
 
 		assert(!result)
@@ -286,7 +286,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementB)
 
 		val isWidthOverlapping = PrivateMethod[Boolean]('isWidthOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isWidthOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isWidthOverlapping(elementA,
 			elementA.width))
 
 		assert(result)
@@ -310,7 +310,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementC)
 
 		val isWidthOverlapping = PrivateMethod[Boolean]('isWidthOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isWidthOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isWidthOverlapping(elementA,
 			elementA.width))
 
 		assert(result)
@@ -336,7 +336,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(elementC)
 
 		val isWidthOverlapping = PrivateMethod[Boolean]('isWidthOverlapping)
-		val result = WireframeBarricade.instance.invokePrivate(isWidthOverlapping(elementA,
+		val result = elementA.barricadeInstance.invokePrivate(isWidthOverlapping(elementA,
 			elementA.width))
 
 		assert(result)
@@ -351,7 +351,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 20
 
 		val isWidthInCanvas = PrivateMethod[Boolean]('isWidthInCanvas)
-		val result = WireframeBarricade.instance.invokePrivate(isWidthInCanvas(element,
+		val result = element.barricadeInstance.invokePrivate(isWidthInCanvas(element,
 			element.width))
 
 		assert(result)
@@ -365,7 +365,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 20
 
 		val isWidthInCanvas = PrivateMethod[Boolean]('isWidthInCanvas)
-		val result = WireframeBarricade.instance.invokePrivate(isWidthInCanvas(element,
+		val result = element.barricadeInstance.invokePrivate(isWidthInCanvas(element,
 			element.width))
 
 		assert(!result)
@@ -381,7 +381,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 23
 
 		val isValidWidth = PrivateMethod[Boolean]('isValidWidth)
-		val result = WireframeBarricade.instance.invokePrivate(isValidWidth(element,
+		val result = element.barricadeInstance.invokePrivate(isValidWidth(element,
 			element.width))
 
 		assert(result)
@@ -395,7 +395,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.y = 20
 
 		val isValidWidth = PrivateMethod[Boolean]('isValidWidth)
-		val result = WireframeBarricade.instance.invokePrivate(isValidWidth(element,
+		val result = element.barricadeInstance.invokePrivate(isValidWidth(element,
 			element.width))
 
 		assert(!result)
@@ -414,7 +414,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		Canvas.instance.add(element2)
 
 		val isValidWidth = PrivateMethod[Boolean]('isValidWidth)
-		val result = WireframeBarricade.instance.invokePrivate(isValidWidth(element,
+		val result = element.barricadeInstance.invokePrivate(isValidWidth(element,
 			element.width))
 
 		assert(!result)
@@ -434,7 +434,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 
 		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlockedGroupContaining(element))
 
 		assert(result)
 	}
@@ -457,7 +457,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		canvas.add(group)
 
 		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlockedGroupContaining(element))
 
 		assert(result)
 	}
@@ -477,7 +477,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 
 
 		val isUnlockedGroupContaining = PrivateMethod[Boolean]('isUnlockedGroupContaining)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlockedGroupContaining(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlockedGroupContaining(element))
 
 		assert(!result)
 	}
@@ -491,7 +491,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider(_value = 3)
 
 		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlocked(element))
 
 		assert(result)
 	}
@@ -505,7 +505,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlocked(element))
 
 		assert(!result)
 	}
@@ -522,7 +522,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		group.locked = true
 
 		val isUnlocked = PrivateMethod[Boolean]('isUnlocked)
-		val result = WireframeBarricade.instance.invokePrivate(isUnlocked(element))
+		val result = element.barricadeInstance.invokePrivate(isUnlocked(element))
 
 		assert(!result)
 	}
@@ -659,7 +659,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		val element = new Slider(_value = 3)
 
 		val annotate= PrivateMethod[Boolean]('annotate)
-		val result = WireframeBarricade.instance.invokePrivate(annotate(element,"test"))
+		val result = element.barricadeInstance.invokePrivate(annotate(element,"test"))
 
 		assert(result)
 	}
@@ -674,7 +674,7 @@ class WireframeBarricadeTest extends FlatSpec with PrivateMethodTester {
 		element.locked = true
 
 		val annotate= PrivateMethod[Boolean]('annotate)
-		val result = WireframeBarricade.instance.invokePrivate(annotate(element,"test"))
+		val result = element.barricadeInstance.invokePrivate(annotate(element,"test"))
 
 		assert(!result)
 	}

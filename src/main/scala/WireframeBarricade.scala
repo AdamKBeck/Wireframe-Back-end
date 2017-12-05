@@ -138,7 +138,7 @@ sealed case class WireframeBarricade () {
 
 	// Checks if an element was moved to a valid spot (in the canvas, non overlapping)
 	private def isMoveValid(element: Element): Boolean = {
-		if (isUnlocked(element) && isValidWidth(element, element.width) && isValidHeight(element, element.height)) {
+		if (isValidWidth(element, element.width) && isValidHeight(element, element.height)) {
 			true
 		}
 		else {
@@ -148,12 +148,12 @@ sealed case class WireframeBarricade () {
 	}
 
 	// Returns based on if an element is unlocked and the group its in is unlocked
-	private def isUnlocked(element: Element): Boolean = {
-		if (!element.locked && isUnlockedGroupContaining(element)) {
+	def isUnlocked(element: Element): Boolean = {
+		if (isUnlockedGroupContaining(element)) {
 			true
 		}
 		else {
-			Logger.instance.log(message = "This element or its group is not unlocked")
+			Logger.instance.log(message = "This element's group is not unlocked")
 			false
 		}
 	}
@@ -321,6 +321,12 @@ final class WireframeBarricadeLocked() extends WireframeBarricade {
 		Logger.instance.log(message = "This element cannot be annotated, reason: LOCKED")
 		false
 	}
+
+	override def isUnlocked(element: Element): Boolean = {
+		Logger.instance.log(message = "This element is not unlocked")
+		false
+	}
+
 
 }
 
