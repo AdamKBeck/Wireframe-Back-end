@@ -1,9 +1,22 @@
-// Provides information for functionalities for a Paragraph
-
 package wireframe
 
 import scala.collection.mutable.ListBuffer
 
+/**
+  * EECS 293
+  * Created by Adam Beck on 12/5/2017
+  * akb93@case.edu
+  * Version 1.0
+  *
+  * Paragraph: An element which contains text, and the text can be aligned
+  * Final, as nothing should extend this.
+  *
+  * @param _linearProperty the linear property of the paragraph
+  * @param _locked the status indicating of a paragraph is locked
+  * @param _annotations the list of annotations relating to the paragraph
+  * @param _alignment the alignment of the paragraph
+  * @param _paragraphs the list of paragraphs contained by the paragraph
+  */
 final class Paragraph (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
 	private val _annotations: ListBuffer[Annotation] = ListBuffer(),
@@ -13,14 +26,5 @@ final class Paragraph (private var _linearProperty: LinearProperty = LinearPrope
 }
 
 object Paragraph{
-	/* This "breaks abstraction badly", but how would a GUI know what it's drawing?
-	 * If I am creating a slider, the only way to know what to add to my GUI is to check this field.
-	 * Otherwise, all I know is that this is a subclass of an element, its shape and linear properties,
-	 * but none of this definitively tells me what type of element I have.
-	 *
-	 * When my Canvas returns a list of elements, I have all the linear properties. From there, the only
-	 * step to draw them on my GUI is to check this field, so I know what to draw (e.g. a JTextBox if
-	 * this field says "Box" or a JSlider if this field says "slider"
-	 */
-	final val TYPE: String = "Paragraph"
+	final val TYPE: String = "Paragraph" // The type of element we have
 }
