@@ -1,4 +1,3 @@
-// Provides information for functionalities for a Slider
 
 package wireframe
 
