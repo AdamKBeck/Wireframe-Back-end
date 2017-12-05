@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>WireframeBarricade</title>
+        <!-- <script src="http://use.edgefonts.net/source-sans-pro;source-code-pro.js"></script> -->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/main.js"></script> -->
+
+    </head>
+    <body>
+        <div>
+
+            <!-- Name Title -->
+
+            <h1>WireframeBarricade</h1>
+
+            <!-- Type and Stereotype -->
+
+            <section style="margin-top: .5em;">
+                <span class="alert alert-info">
+                    <span class="node-icon _icon-UMLClass"></span>
+                    UMLClass
+                </span>
+                
+            </section>
+
+            <!-- Path -->
+
+            <section style="margin-top: 10px">
+                
+                
+                
+                    
+                    <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon _icon-Project'></span>Wireframe</a></span>
+                
+                    <span>::</span>
+                    <span class="label label-info"><a href='594af663de577680f35b13183109d675.html'><span class='node-icon _icon-UMLModel'></span>Model</a></span>
+                
+                    <span>::</span>
+                    <span class="label label-info"><a href='f2dbf715a921efa03d9a7fa85ba5ff80.html'><span class='node-icon _icon-UMLClass'></span>WireframeBarricade</a></span>
+                
+            </section>
+
+            <!-- Diagram -->
+
+            
+
+            <!-- Description -->
+
+            
+            <section>
+                <h3>Description</h3>
+                <div>
+                    
+                        <p>Before an element is altered, the corresponding movement method is called in this class.  For setting width/height/location, it is checked in this barricade class. This class calls upon the elements in the Canvas to determine overlapping elements (bad for things like text boxes). </p>
+
+<p>When moving an element, it is either moved based on this information, or it will stay in place if the move is invalid.  If the element can&#39;t be added to the canvas, it simply does not get added.</p>
+
+<p>invalid dimensions/movements/sizes will be logged. probably though a new GUI window.</p>
+
+<p>All placement will additionally call upon the canvas dimensions to make sure they fit on the screen.</p>
+                    
+                </div>
+            </section>
+            
+
+            <!-- Specification -->
+
+            
+
+            <!-- Directed Relationship -->
+
+            
+
+            <!-- Undirected Relationship -->
+
+            
+
+            <!-- Classifier -->
+
+            
+                
+                
+
+
+                
+                
+<section class="element-list">
+    <h3>Specialized Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='147b5f178bba64267488a4dced23c768.html'><span class='node-icon _icon-UMLClass'></span>Canvas</a></li>
+        
+        <li><a href='cf645a32adbe344f2b97c69b365a5b51.html'><span class='node-icon _icon-UMLClass'></span>Element</a></li>
+        
+        <li><a href='a9b4151c96efb4051a4aadf58437e4f3.html'><span class='node-icon _icon-UMLClass'></span>LinearProperty</a></li>
+        
+    </ul>
+</section>
+
+
+
+                
+                
+
+
+                
+                
+
+
+                
+                
+
+            
+
+            <!-- Interface -->
+
+            
+
+            <!-- Component -->
+
+            
+
+            <!-- Node -->
+
+            
+
+            <!-- Actor -->
+
+            
+
+            <!-- Use Case -->
+
+            
+
+            <!-- Template Parameters -->
+
+            
+
+            <!-- Literals -->
+
+            
+
+            <!-- Attributes -->
+
+            
+
+            <!-- Operations -->
+
+            
+            <section>
+                <h3>Operations</h3>
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>Visibility</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="5081a6e241ddbcd62c59a443cfbddbd8.html">setWidth(width: Int): Boolean</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="b13167541ca546149c52e52e38d435d8.html">setLocation(x: Int, y: Int): Boolean</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="4e018639c0541cace4c9e40b10eb0300.html">bringToTop(element: Element): Boolean</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="12474df825b8fa058480e058be1a93ce.html">setHeight(height: Int): Boolean</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="174a04b5ea7f250569952fded76122fd.html">bringToBottom(element: Element)</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="3898cb15c9428f6d5de908cd5db171f5.html">setLayerPriority(priority: Byte): Boolean</a></td>
+                        <td><p>Iterate through all elements on the canvas to see if this new change overlaps anything deemed not overlappable (text, for example). Checks if the element is locked before doing the above. </p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="0e2385ce133f91c924d0d5bc14d21cc8.html">group(element: Element, group: Group): Boolean</a></td>
+                        <td><p>Check if a new element already exists in the proposed Group. If this element is not locked, the change is valid.</p>
+
+<p>If the new change is valid, call a helper method to execute the change. This will loop through the element&#39;s annotations and set their position to this new change (not sure about changing width,  for example, but definitely for changing position).</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="7f3cf29f5da6a34f2d5e6fb54a3010a2.html">annotate(element: Element, text: String): Boolean</a></td>
+                        <td><p>Check if an element is locked. If it isn&#39;t annotate the element.</p>
+
+<p>If the new change is valid, call a helper method to execute the change. The annotation will be placed where the element is, according to the element&#39;s priority, width, height, etc.</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="445b16d1d3c44ee0595488578921db2e.html">annotate(group: Group, annotation: Annotation): Boolean</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="7ce3511f81deb8e42f8ab088bca8ed6f.html">isMoveValid(element: Element): Boolean</a></td>
+                        <td><p>Checks if an element moved validly. Makes sure the element is not locked, it didn&#39;t fly off of the canvas, and it doesn&#39;t overlap anything else.</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="1968dd937ee24050146d02fc27cef799.html">isUnlocked(element: element): Boolean</a></td>
+                        <td><p>// Returns based on if an element is unlocked and the group its in is unlocked</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="c01b48895ec1aa5288904a6d62cedb3a.html">isUnlockedGroupContaining(element: element): Boolean</a></td>
+                        <td><p>/<em> Returns based on if a group containing an element is unlocked.
+	 </em> Works by finding the group (if any) that contain the element, then filters it out if
+	 <em> the group is locked. Then if we have a group that&#39;s unlocked, it meets the condition of this function call
+	 </em>/</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="59e42590971a27d3f8adf7b8ee28fe0f.html">isValidWidth(element: element, width: Int): Boolean</a></td>
+                        <td><p>// Checks if a proposed width is in the canvas and doesn&#39;t overlap anything</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="7bdeec0c9a79599ada528f779dcdbaee.html">isWidthInCanvas(element: element, width: Int)</a></td>
+                        <td><pre><code>// Checks if a proposed width is within the canvas</code></pre></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="1baf3fdc57b06ab24918540f6954bbb5.html">isWidthOverlapping(element: Element, width: int): boolean</a></td>
+                        <td><pre><code>// Checks if a proposed width on an element ends up overlapping the other elements</code></pre></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="88c26d757fca02284fbd0d1fc4228870.html">isValidHeight(element: element, height: Int): Boolean</a></td>
+                        <td><p>// Checks if a proposed height is in the canvas and doesn&#39;t overlap anything</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="8b805646eee641bee91a6d43e64a7479.html">isHeightInCanvas(element: element, height: Int): Boolean</a></td>
+                        <td><pre><code>// Checks if a proposed height is within the canvas</code></pre></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="49a41a32bb8899ea3caaed218baa8856.html">isHeightOverlapping(element: Element, height: Int): Boolean</a></td>
+                        <td><p>// Checks if a proposed height on an element ends up overlapping the other elements</p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="82b5224c157fab4ee6eee47d5e03ac2d.html">instance(): WireframeBarricade</a></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="36356cb7578ae9d3aa45ff664824ac26.html">groupWith(element: element): List&lt;Group&gt;</a></td>
+                        <td><pre><code>// Helper function to return the group(s) that contains a specified element</code></pre></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>public</td>
+                        <td><a href="c282fe814224a287160c67da7aeee239.html">elementsExcept(element: element): List&lt;Element&gt;</a></td>
+                        <td><pre><code>// Helper function to return all the elements on the canvas besides our current one</code></pre></td>
+                    </tr>
+                    
+                </table>
+            </section>
+            
+
+            <!-- Receptions -->
+
+            
+
+            <!-- Extension Points -->
+
+            
+
+            <!-- Parameters -->
+
+            
+
+            <!-- Diagrams -->
+
+            
+            
+
+            <!-- Behavior -->
+
+            
+
+            <!-- Action -->
+
+            
+
+            <!-- Interaction -->
+
+            
+
+            <!-- CombinedFragment -->
+
+            
+
+            <!-- Activity -->
+
+            
+
+            <!-- State Machine -->
+
+            
+
+            <!-- State Machine -->
+
+            
+
+            <!-- State -->
+
+            
+
+            <!-- Vertex -->
+
+            
+
+            <!-- Transition -->
+
+            
+
+            <!-- Properties -->
+
+            <section>
+                <h3>Properties</h3>
+                
+                <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>WireframeBarricade</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+            </section>
+
+            <!-- Tags -->
+
+            
+
+            <!-- Constraints, Dependencies, Dependants -->
+
+            
+                
+                
+
+
+                
+                
+
+
+                
+                
+<section class="element-list">
+    <h3>Dependants</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='a9b4151c96efb4051a4aadf58437e4f3.html'><span class='node-icon _icon-UMLClass'></span>LinearProperty</a></li>
+        
+    </ul>
+</section>
+
+
+            
+
+            <!-- Relationships -->
+
+            
+            
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8aa92eab6372241c6871b719906e4086.html'><span class='node-icon _icon-UMLGeneralization'></span>uses (Canvas→WireframeBarricade)</a></li>
+        
+        <li><a href='4c90233f9ff04250c8b63b8a088bbc54.html'><span class='node-icon _icon-UMLGeneralization'></span>uses (Element→WireframeBarricade)</a></li>
+        
+        <li><a href='f1a98d3cf5c50d402c313606cf7830d5.html'><span class='node-icon _icon-UMLAssociation'></span>(LinearProperty—WireframeBarricade)</a></li>
+        
+        <li><a href='8db5dcc47f2f6331f1008f16049afd7d.html'><span class='node-icon _icon-UMLDependency'></span>uses (LinearProperty→WireframeBarricade)</a></li>
+        
+        <li><a href='715b7bd166264bfd39a14dae1e0065b1.html'><span class='node-icon _icon-UMLGeneralization'></span>uses (LinearProperty→WireframeBarricade)</a></li>
+        
+    </ul>
+</section>
+
+
+
+            <!-- Owned Elements -->
+
+            
+            
+
+
+        </div>
+    </body>
+</html>

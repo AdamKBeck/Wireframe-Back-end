@@ -1,0 +1,16 @@
+Previously, an element could be a part of many different groups. Now, an element can only be a part of 1 group.
+
+Added a method to remove elements from a group, as I didn't include it due to a copy/paste error.
+
+
+I'm keeping the types for the Slider sublcass enums because it's essential for the GUI to know what it's drawing.
+
+The behavior for all 3 types of Bars is the same, so this is the only way to differentiate between them.
+
+Added a remove method to the Canvas as discussed in class. Also, the add/remove methods for Canvas return a Boolean, keeping them consistent with the other methods similar to it.
+
+For the enums, I replaced all of them with just text denoting what type of element I have. 
+
+Additionally, Superclasses have a protected constructor, so the subclasses can call them, but not from another outisde class.
+
+This helps keep my code as locked down as possible. As always, all variables are as private as possible.
