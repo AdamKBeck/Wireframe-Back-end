@@ -9,7 +9,6 @@ package wireframe
   * Annotation: A type of text that can be related to an element or a group
   * Final, as nothing should extend this class.
   *
-  *
   * @param _visibility the visibility of the comment
   * @param _linearProperty the linear properties that the comment follows from its related element
   * @param _message the message the comment contains
