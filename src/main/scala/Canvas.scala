@@ -10,7 +10,7 @@ import scala.collection.mutable.ListBuffer
   * akb93@case.edu
   * Version 1.0
   *
-  * Provides information and functionalities for the Canvas, the "webpage" each element of the
+  * Canvas: Provides information and functionalities for the canvas, the "webpage" each element of the
   * wireframe is being drawn into.
   * Final, as no class should extend this.
   * Singleton, as we only want one canvas.
