@@ -12,8 +12,8 @@ import scala.collection.mutable.ListBuffer
   * Abstract, as only subclasses should have objects being created from them. Box doesn't exist on its own.
   *
   * @param _linearProperty the linear properties that the box follows
-  * @param _locked // the status indicating if the box is locked
-  * @param _annotations // the list of annotations relating to the box
+  * @param _locked  the status indicating if the box is locked
+  * @param _annotations the list of annotations relating to the box
   */
 abstract class Box(private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,

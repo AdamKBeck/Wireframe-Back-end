@@ -12,8 +12,8 @@ import scala.collection.mutable.ListBuffer
   * Final, as nothing should override thid
   *
   * @param _linearProperty the linear property relating to an image
-  * @param _locked // the status indicating if the box is locked
-  * @param _annotations // the list of annotations relating to the box
+  * @param _locked  the status indicating if the box is locked
+  * @param _annotations  the list of annotations relating to the box
   */
 final class Image (private var _linearProperty: LinearProperty = LinearProperty.DEFAULT_LINEAR_PROPERTY,
 	private var _locked: Boolean = false,
