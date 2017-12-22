@@ -1,2 +1,2 @@
-final_wireframe/* linguist-vendored=false
-
+* linguist-vendored=false
+*.scala linguist-vendored=false
