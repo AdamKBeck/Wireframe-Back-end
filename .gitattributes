@@ -1,2 +1,1 @@
-* linguist-vendored=false
-*.scala linguist-vendored=false
+final_wireframe/* linguist_vendored
